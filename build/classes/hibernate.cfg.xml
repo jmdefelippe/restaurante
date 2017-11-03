@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD
+3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost/mydb</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<property name="connection.pool_size">1</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property> <!-- en true muestra hql en consola-->
+		<!--Mapeo Entidades -->
+		
+		<!--
+			<mapping resource="mapeos/Camarero.hbm.xml"/>
+			<mapping resource="mapeos/Cliente.hbm.xml"/>
+			<mapping resource="mapeos/Comanda.hbm.xml"/>	
+			<mapping resource="mapeos/ComponenteMenu.hbm.xml"/>
+			<mapping resource="mapeos/Conversion.hbm.xml"/>
+			<mapping resource="mapeos/Ingrediente.hbm.xml"/>
+			<mapping resource="mapeos/ItemComanda.hbm.xml"/>
+			<mapping resource="mapeos/ItemComposicion.hbm.xml"/>
+			<mapping resource="mapeos/ItemListaPrecio.hbm.xml"/>
+			<mapping resource="mapeos/ItemStock.hbm.xml"/>	
+			<mapping resource="mapeos/ItemTicket.hbm.xml"/>	
+			<mapping resource="mapeos/ListaPrecio.hbm.xml"/>
+			<mapping resource="mapeos/Login.hbm.xml"/>
+			<mapping resource="mapeos/Menu.hbm.xml"/>
+			<mapping resource="mapeos/Mesa.hbm.xml"/>
+			<mapping resource="mapeos/MesaCompuesta.hbm.xml"/>
+			<mapping resource="mapeos/Permiso.hbm.xml"/>
+			<mapping resource="mapeos/Presentacion.hbm.xml"/>
+			<mapping resource="mapeos/Producto.hbm.xml"/>
+			<mapping resource="mapeos/Restaurant.hbm.xml"/>	-->	
+			<mapping resource="mapeos/Rubro.hbm.xml"/>
+		<!--	<mapping resource="mapeos/Salon.hbm.xml"/>
+			<mapping resource="mapeos/Stock.hbm.xml"/>
+			<mapping resource="mapeos/Subrubro.hbm.xml"/>
+			<mapping resource="mapeos/Ticket.hbm.xml"/>
+			<mapping resource="mapeos/TipoCliente.hbm.xml"/>
+			<mapping resource="mapeos/TipoUsuario.hbm.xml"/>
+			<mapping resource="mapeos/Usuario.hbm.xml"/>
+			<mapping resource="mapeos/Vianda.hbm.xml"/>			
+		-->
+		
+	</session-factory>
+</hibernate-configuration>
