@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="datos.Permiso" table="permiso">
+		
+		<id column="idPermiso" name="idPermiso"><generator class="identity"/></id>
+		
+		<property column="accion" name="accion" type="string"/>
+				
+		<set table="permisoXTipoUsuario" name="tiposusuarios" outer-join="true">
+			<key column="idPermiso"/>
+			<many-to-many column="idTipoUsuario" class="datos.TipoUsuario"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>
