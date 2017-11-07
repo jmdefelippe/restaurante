@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Ticket" table="ticket">
+		
+		<id column="idTicket" name="idTicket"><generator class="identity"/></id>
+		
+		<many-to-one name = "restaurant" class = "datos.Restaurant" column = "idRestaurant" not-null = "true"/>
+		<many-to-one name = "usuario" class = "datos.Usuario" column = "idUsuario" not-null = "true"/>
+				
+		<set name = "itemsTicket" table = "itemTicket" order-by = "idItemTicket asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idTicket" not-null = "true"/>
+			<one-to-many class = "datos.ItemTicket"/>
+		</set>
+		
+		<set name = "comandas" table = "comanda" order-by = "idComanda asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idTicket" not-null = "true"/>
+			<one-to-many class = "datos.Comanda"/>
+		</set>
+	
+	</class>
+</hibernate-mapping>

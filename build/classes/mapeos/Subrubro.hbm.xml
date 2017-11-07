@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name = "datos.Subrubro" table = "subrubro">
+		
+		<id column = "idSubrubro" name = "idSubrubro"><generator class = "identity"/></id>
+
+		<property column = "nombre" name = "nombre" type = "string"/>
+				
+		<many-to-one name = "rubro" class = "datos.Rubro" column = "idRubro" not-null = "true"/>
+		
+		<set name = "componentesMenu" table = "componenteMenu" order-by = "idComponenteMenu asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idSubrubro" not-null = "true"/>
+			<one-to-many class = "datos.ComponenteMenu"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>

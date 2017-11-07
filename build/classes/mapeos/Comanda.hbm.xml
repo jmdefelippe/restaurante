@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Comanda" table="comanda">
+		
+		<id column="idComanda" name="idComanda"><generator class="identity"/></id>
+		
+		<property column = "fechaHora" name = "fechaHora" type = "calendar" />
+		
+		<many-to-one name = "camarero" class = "datos.Camarero" column = "idCamarero" not-null = "true"/>
+		<many-to-one name = "cliente" class = "datos.Cliente" column = "idCliente" not-null = "true"/>
+		<many-to-one name = "mesaCompuesta" class = "datos.MesaCompuesta" column = "idMesaCompuesta" not-null = "true"/>
+		<many-to-one name = "ticket" class = "datos.Ticket" column = "idTicket" not-null = "true"/>
+		
+		<set name = "itemsComanda" table = "itemComanda" order-by = "idItemComanda asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idComanda" not-null = "true"/>
+			<one-to-many class = "datos.ItemComanda"/>
+		</set>
+	
+	</class>
+</hibernate-mapping>

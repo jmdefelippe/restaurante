@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.ListaPrecio" table="listaPrecio">
+		
+		<id column="idListaPrecio" name="idListaPrecio"><generator class="identity"/></id>
+		
+		<property column = "fechaDesde" name = "fechaDesde" type = "calendar" />
+		<property column = "fechaHasta" name = "fechaHasta" type = "calendar" />
+		
+		<set name = "itemsListaPrecio" table = "itemListaPrecio" order-by = "idItemListaPrecio asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idListaPrecio" not-null = "true"/>
+			<one-to-many class = "datos.ItemListaPrecio"/>
+		</set>
+		
+		<set name = "clientes" table = "cliente" order-by = "idClienteasc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idListaPrecio" not-null = "true"/>
+			<one-to-many class = "datos.Cliente"/>
+		</set>
+	
+	
+	</class>
+</hibernate-mapping>

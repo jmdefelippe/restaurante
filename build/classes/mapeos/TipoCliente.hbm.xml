@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.TipoCliente" table="tipoCliente">
+		
+		<id column="idTipoCliente" name="idTipoCliente"><generator class="identity"/></id>
+		
+		<property column="nombre" name="nombre" type="string"/>
+				
+		<set name = "clientes" table = "cliente" order-by = "idCliente asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idTipoCliente" not-null = "true"/>
+			<one-to-many class = "datos.Cliente"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>
