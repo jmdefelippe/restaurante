@@ -73,11 +73,11 @@ public class LoginDao {
 		return objeto;
 	}
 	
-	public Login traerLogin(String nombre) throws HibernateException {
+	public Login traerLogin(String nick) throws HibernateException {
 		Login objeto = null;
 		try {
 			iniciaOperacion();
-			objeto = (Login) session.createQuery("from Login l where l.nombre=" + nombre).uniqueResult();
+			objeto = (Login) session.createQuery("from Login l where l.nick=" + nick).uniqueResult();
 		} finally {
 			session.close();
 		}
@@ -89,7 +89,7 @@ public class LoginDao {
 		List<Login> lista=null;
 		try {
 			iniciaOperacion();
-			lista=session.createQuery("from Login c order by c.id").list();
+			lista=session.createQuery("from Login l order by l.id").list();
 		} finally {
 			session.close();
 		}
@@ -125,13 +125,13 @@ public class LoginDao {
 	}	
 	
 	
-	public boolean existeLogin(String nombre) throws HibernateException {
+	public boolean existeLogin(String nick) throws HibernateException {
 
 		Login objeto = null;
 		
 		try {
 			iniciaOperacion();
-			objeto = (Login) session.createQuery("from Login l where l.nombre ='"+ nombre+"'").uniqueResult();
+			objeto = (Login) session.createQuery("from Login l where l.nombre ='"+ nick+"'").uniqueResult();
 		} finally {
 			session.close();
 		}

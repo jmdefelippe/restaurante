@@ -3,17 +3,17 @@ package datos;
 public class Login {
 	
 	private int idLogin;
-	private String nombre;
-	private String contraseña;
+	private String nick;
+	private String clave;
 	
 	private Usuario usuario;
 
 	public Login() {
 	}
 
-	public Login(String nombre, String contraseña, Usuario usuario) {
-		this.nombre = nombre;
-		this.contraseña = contraseña;
+	public Login(String nick, String clave, Usuario usuario) {
+		this.nick = nick;
+		this.clave = clave;
 		this.usuario = usuario;
 	}
 
@@ -25,20 +25,20 @@ public class Login {
 		this.idLogin = idLogin;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getNick() {
+		return nick;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getClave() {
+		return clave;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setClave(String clave) {
+		this.clave = clave;
 	}
 
 	public Usuario getUsuario() {
@@ -52,8 +52,8 @@ public class Login {
 	@Override
 	public String toString() {
 		return  "Login [idLogin=" + idLogin +
-				", nombre=" + nombre +
-				", contraseña=" + contraseña +
+				", nick=" + nick +
+				", clave=" + clave +
 				"]";
 	}	
 	

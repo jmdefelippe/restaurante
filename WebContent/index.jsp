@@ -15,9 +15,20 @@
 		
 	</head>
 	<body>
-		<body style="background-color:#3c3c3c;">
+<!-- 		<body style="background-color:#3c3c3c;"> -->
 
-
+		<FORM method="POST" action="/Restaurante/Inicio ">
+			<p><h5> Restaurante </h5> </p>
+				  <div class="col-lg-2">
+					<label>Usuario: </label>
+					<input class="form-control " name="nick" type="text">
+					<br>
+					<label>Contraseña: </label>
+					<input class="form-control " name="clave" type="password">
+					<br>
+					<input type="submit" value="Entrar">
+				  </div>
+		</FORM>
 
 
 
