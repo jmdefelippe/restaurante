@@ -8,7 +8,10 @@ public class Usuario {
 	private long dni;
 	private String nombre;
 	private String apellido;
-		
+	
+	private Login login;
+	private TipoUsuario tipoUsuario;
+	
 	private Set<Ticket> tickets;
 
 	public Usuario() {
@@ -67,6 +70,29 @@ public class Usuario {
 				", nombre=" + nombre +
 				", apellido=" + apellido +
 				"]";
-	}	
+	}
+
+	public Usuario(int idUsuario, long dni, String nombre, String apellido) {
+		super();
+		this.idUsuario = idUsuario;
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellido = apellido;
+	}
+
+	public Usuario(int idUsuario, long dni, String nombre, String apellido, Login login, TipoUsuario tipoUsuario) {
+		super();
+		this.idUsuario = idUsuario;
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.login = login;
+		this.tipoUsuario = tipoUsuario;
+	}
+
+
+	
+	
+	
 	
 }

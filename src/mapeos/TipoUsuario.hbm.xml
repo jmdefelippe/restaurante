@@ -13,10 +13,10 @@
 			<one-to-many class = "datos.Usuario"/>
 		</set>
 		
-		<set table="permisoXTipoUsuario" name="permisos" outer-join="true">
-			<key column="idTipoUsuario"/>
-			<many-to-many column="idPermiso" class="datos.Permiso"/>
-		</set>
+<!-- 		<set table="permisoXTipoUsuario" name="permisos" outer-join="true"> -->
+<!-- 			<key column="idTipoUsuario"/> -->
+<!-- 			<many-to-many column="idPermiso" class="datos.Permiso"/> -->
+<!-- 		</set> -->
 		
 	</class>
 </hibernate-mapping>

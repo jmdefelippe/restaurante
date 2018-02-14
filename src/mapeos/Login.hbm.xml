@@ -8,7 +8,7 @@
 		<id column="idLogin" name="idLogin"><generator class="identity"/></id>
 		
 		<property column="nombre" name="nombre" type="string"/>
-		<property column="contraseña" name="contraseña" type="string"/>
+		<property column="clave" name="clave" type="string"/>
 		
 		<one-to-one name = "usuario" class = "datos.Usuario"></one-to-one>	
 		
