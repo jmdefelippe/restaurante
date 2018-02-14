@@ -8,10 +8,10 @@
 		
 		<property column="nombre" name="nombre" type="string"/>
 		
-<!--		<set name = "subrubros" table = "subrubro" order-by = "idSubrubro asc" inverse = "true" lazy = "true" fetch = "select">
+		<set name = "subrubros" table = "subrubro" order-by = "idSubrubro asc" inverse = "true" lazy = "true" fetch = "select">
 			<key column = "idRubro" not-null = "true"/>
 			<one-to-many class = "datos.Subrubro"/>
 		</set>
--->		
+
 	</class>
 </hibernate-mapping>

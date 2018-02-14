@@ -1,6 +1,8 @@
 package test;
 
 import negocio.LoginABM;
+import negocio.RubroABM;
+import negocio.SubrubroABM;
 import negocio.TipoUsuarioABM;
 import negocio.UsuarioABM;
 
@@ -11,11 +13,20 @@ public class TestTraer {
 			LoginABM loginABM = new LoginABM();
 			UsuarioABM usuarioABM = new UsuarioABM();
 			
+			RubroABM rubroABM = new RubroABM();
+			SubrubroABM subrubroABM = new SubrubroABM();
+			
 			System.out.println(tipoUsuarioABM.traerTipoUsuario(1));
 			System.out.println();
 			System.out.println(usuarioABM.traerUsuario(1));
 			System.out.println();
 			System.out.println(loginABM.traerLogin(1));
+			System.out.println();
+			
+			System.out.println(rubroABM.traerRubro(2));
+			System.out.println();
+			System.out.println(subrubroABM.traerSubrubro(5));
+			System.out.println();
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

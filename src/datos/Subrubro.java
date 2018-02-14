@@ -55,6 +55,7 @@ public class Subrubro {
 	public String toString() {
 		return  "Subrubro [idSubrubro=" + idSubrubro +
 				", nombre=" + nombre +
+				", rubro=" + rubro.getNombre() +
 				"]";
 	}	
 	

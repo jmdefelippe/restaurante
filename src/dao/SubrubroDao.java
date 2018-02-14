@@ -67,6 +67,7 @@ public class SubrubroDao {
 		try {
 			iniciaOperacion();
 			objeto = (Subrubro) session.get(Subrubro.class, idSubrubro);
+			Hibernate.initialize(objeto.getRubro());
 		} finally {
 			session.close();
 		}
