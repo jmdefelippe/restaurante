@@ -69,6 +69,7 @@ public class Usuario {
 				", dni=" + dni +
 				", nombre=" + nombre +
 				", apellido=" + apellido +
+				", tipoUsuario=" + tipoUsuario.getNombre() +
 				"]";
 	}
 
@@ -87,6 +88,22 @@ public class Usuario {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.login = login;
+		this.tipoUsuario = tipoUsuario;
+	}
+
+	public Login getLogin() {
+		return login;
+	}
+
+	public void setLogin(Login login) {
+		this.login = login;
+	}
+
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
 	}
 

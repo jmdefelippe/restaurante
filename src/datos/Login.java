@@ -11,7 +11,16 @@ public class Login {
 	public Login() {
 	}
 
-	public Login(String nick, String clave, Usuario usuario) {
+	public Login(int idLogin, String nick, String clave) {
+		super();
+		this.idLogin = idLogin;
+		this.nick = nick;
+		this.clave = clave;
+	}
+	
+	public Login(int idLogin, String nick, String clave, Usuario usuario) {
+		super();
+		this.idLogin = idLogin;
 		this.nick = nick;
 		this.clave = clave;
 		this.usuario = usuario;
@@ -54,6 +63,7 @@ public class Login {
 		return  "Login [idLogin=" + idLogin +
 				", nick=" + nick +
 				", clave=" + clave +
+				", usuario=" + usuario.getNombre() + " " + usuario.getApellido() +
 				"]";
 	}	
 	

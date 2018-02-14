@@ -67,6 +67,8 @@ public class UsuarioDao {
 		try {
 			iniciaOperacion();
 			objeto = (Usuario) session.get(Usuario.class, idUsuario);
+			Hibernate.initialize(objeto.getTipoUsuario());
+			Hibernate.initialize(objeto.getLogin());
 		} finally {
 			session.close();
 		}
