@@ -18,9 +18,17 @@ public class Login {
 		this.clave = clave;
 	}
 	
+	/* el id del login es autoincrementable este constructor no va para mi
 	public Login(int idLogin, String nick, String clave, Usuario usuario) {
 		super();
 		this.idLogin = idLogin;
+		this.nick = nick;
+		this.clave = clave;
+		this.usuario = usuario;
+	}
+	*/
+	public Login( String nick, String clave, Usuario usuario) {
+		super();
 		this.nick = nick;
 		this.clave = clave;
 		this.usuario = usuario;

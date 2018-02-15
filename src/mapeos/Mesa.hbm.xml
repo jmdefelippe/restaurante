@@ -9,7 +9,7 @@
 		<property column="capacidad" name="capacidad" type="int"/>
 		<property column="state" name="state" type="string"/>
 						
-		ACA HAY QUE MAPEAR EL STATE
+		<!-- ACA HAY QUE MAPEAR EL STATE  -->
 	
 		<many-to-one name = "mesaCompuesta" class = "datos.MesaCompuesta" column = "idMesaCompuesta" not-null = "true"/>
 
