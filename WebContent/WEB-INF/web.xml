@@ -8,7 +8,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version = "3.
 <welcome-file-list>
 	<welcome-file> index.html </welcome-file>
 	<welcome-file> index.htm </welcome-file>
-	<welcome-file> jsp/index.jsp </welcome-file>
+	<welcome-file> /jsp/index.jsp </welcome-file>
 	<welcome-file> default.html </welcome-file>
 	<welcome-file> default.htm </welcome-file>
 	<welcome-file> default.jsp </welcome-file>
@@ -16,5 +16,24 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version = "3.
 </welcome-file-list>
 
 
+  <servlet>
+    <servlet-name>ControladorLogin</servlet-name>
+    <servlet-class>controladores.ControladorLogin</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ControladorLogout</servlet-name>
+    <servlet-class>controladores.ControladorLogout</servlet-class>
+  </servlet>
+
+ <servlet-mapping>	 
+    <servlet-name>ControladorLogin</servlet-name>
+    <url-pattern>/Inicio</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>	 
+    <servlet-name>ControladorLogout</servlet-name>
+    <url-pattern>/Salir</url-pattern>
+  </servlet-mapping> 
 
 </web-app>
