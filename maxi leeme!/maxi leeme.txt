@@ -1,0 +1,23 @@
+en el script, abajo de la creacion de las tablas le mande los insert values y los carga de una
+agregue los datos a mano, mande apply y copie ese codigo debajo del que me genera el forward
+corriendo todo el archivo bd-restaurant SQL Text File ya crea las tablas y carga los datos!
+
+ayer cuando hice el commit pense que se habia subido con los datos cargados, mala mia, en mi compu
+habian quedado cargados pero porque nunca habia hecho un drop de la base
+
+
+cambie nombre de la bd de mydb a bd-restaurant. lo cambie del config tambien
+
+
+las tablas pertenecientes a la rama de abajo de todo como ingrediente, vianda, conversion:
+podria ni cargarlas? ya que los caso de uso no involucran tales tablas, solo componenteMenu, la cual
+la pude cargar de todos modos sin cargas las demas
+
+
+estan cargadas todas las tablas que te mando en el screen del der, excepto:
+ticket, itemticket, comanda, itemcomanda, mesa
+
+
+las listas de precio varian dependiendo el tipo de cliente, interno o externo
+LISTA 1: INTERNA - PRECIOS MAS BARATOS
+LISTA 2: EXTERNA - PRECIOS MAS CAROS

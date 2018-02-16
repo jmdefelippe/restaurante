@@ -582,4 +582,11 @@ INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `i
 INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('27', '140', '14', '1');
 INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('28', '150', '14', '2');
 
+INSERT INTO `bd-restaurant`.`tipocliente` (`idTipoCliente`, `nombre`, `idListaPrecio`) VALUES ('1', 'interno', '1');
+INSERT INTO `bd-restaurant`.`tipocliente` (`idTipoCliente`, `nombre`, `idListaPrecio`) VALUES ('2', 'externo', '2');
 
+INSERT INTO `bd-restaurant`.`cliente` (`idCliente`, `nombre`, `apellido`, `dni`, `idTipoCliente`) VALUES ('1', 'luis', 'rodriguez', '35111111', '1');
+INSERT INTO `bd-restaurant`.`cliente` (`idCliente`, `nombre`, `apellido`, `dni`, `idTipoCliente`) VALUES ('2', 'rafael', 'diaz', '35222222', '1');
+INSERT INTO `bd-restaurant`.`cliente` (`idCliente`, `nombre`, `apellido`, `dni`, `idTipoCliente`) VALUES ('3', 'pablo', 'martinez', '35333333', '1');
+INSERT INTO `bd-restaurant`.`cliente` (`idCliente`, `nombre`, `apellido`, `dni`, `idTipoCliente`) VALUES ('4', 'david', 'ramirez', '35444444', '2');
+INSERT INTO `bd-restaurant`.`cliente` (`idCliente`, `nombre`, `apellido`, `dni`, `idTipoCliente`) VALUES ('5', 'sebastian', 'garcia', '35555555', '2');
