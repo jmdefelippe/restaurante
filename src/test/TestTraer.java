@@ -13,7 +13,7 @@ public class TestTraer {
 		try {
 			TipoUsuarioABM tipoUsuarioABM = new TipoUsuarioABM();
 			LoginABM loginABM = new LoginABM();
-			UsuarioABM usuarioABM = new UsuarioABM();
+			UsuarioABM usuarioABM = new UsuarioABM();			
 			
 			System.out.println(tipoUsuarioABM.traerTipoUsuario(1));
 			System.out.println();
@@ -21,6 +21,9 @@ public class TestTraer {
 			System.out.println();
 			System.out.println(loginABM.traerLogin(1));
 			System.out.println();
+			
+			//System.out.println(loginABM.traerLogin(100)); //login que no existe
+			//System.out.println();
 
 			RubroABM rubroABM = new RubroABM();
 			SubrubroABM subrubroABM = new SubrubroABM();

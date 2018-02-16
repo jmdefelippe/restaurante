@@ -13,13 +13,17 @@ public class LoginABM {
 	
 	public Login traerLogin(int idLogin) throws Exception{
 		Login login = dao.traerLogin(idLogin);
-			
-    	if (login.equals(null))
+
+    	if (login==null) 							
     		throw new Exception("Error:El login no existe");
 		
 		return login;
 	}
-	
+	/* Importante wachon! 
+	 * Cuando comparas objetos usas equals
+	 * Cuando comparas Strings usas compareTo
+	 * Cuando comparas referencias usas == es decir null  
+	 */
 	
 	public Login traerLogin(String nick) throws Exception{
 		Login login = dao.traerLogin(nick);
