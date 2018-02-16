@@ -9,7 +9,7 @@ public class Salon {
 	
 	private Restaurant restaurant;
 	
-	private Set<MesaCompuesta> mesasCompuestas;
+	private Set<Mesa> mesas;
 
 	public Salon() {
 	}
@@ -43,12 +43,12 @@ public class Salon {
 		this.restaurant = restaurant;
 	}
 
-	public Set<MesaCompuesta> getMesaCompuestas() {
-		return mesasCompuestas;
+	public Set<Mesa> getMesas() {
+		return mesas;
 	}
 
-	public void setMesaCompuestas(Set<MesaCompuesta> mesasCompuestas) {
-		this.mesasCompuestas = mesasCompuestas;
+	public void setMesas(Set<Mesa> mesas) {
+		this.mesas = mesas;
 	}
 	
 	@Override

@@ -7,7 +7,7 @@ import dao.ComandaDao;
 import datos.Camarero;
 import datos.Cliente;
 import datos.Comanda;
-import datos.MesaCompuesta;
+import datos.Mesa;
 import datos.Ticket;
 
 public class ComandaABM {
@@ -25,8 +25,8 @@ public class ComandaABM {
 	}
 
 	
-    public int agregar(GregorianCalendar fechaHora, Camarero camarero, Cliente cliente, MesaCompuesta mesaCompuesta){
-		Comanda comanda = new Comanda(fechaHora, camarero, cliente, mesaCompuesta);
+    public int agregar(GregorianCalendar fechaHora, Camarero camarero, Cliente cliente, Mesa mesa){
+		Comanda comanda = new Comanda(fechaHora, camarero, cliente, mesa);
 		
 		return dao.agregar(comanda);
 	}

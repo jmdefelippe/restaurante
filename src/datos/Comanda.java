@@ -12,18 +12,18 @@ public class Comanda {
 	
 	private Camarero camarero;
 	private Cliente cliente;
-	private MesaCompuesta mesaCompuesta;
+	private Mesa mesa;
 	
 	private Set<ItemComanda> itemsComanda;
 
 	public Comanda() {
 	}
 
-	public Comanda(GregorianCalendar fechaHora, Camarero camarero, Cliente cliente, MesaCompuesta mesaCompuesta) {
+	public Comanda(GregorianCalendar fechaHora, Camarero camarero, Cliente cliente, Mesa mesa) {
 		this.fechaHora = fechaHora;
 		this.camarero = camarero;
 		this.cliente = cliente;
-		this.mesaCompuesta = mesaCompuesta;
+		this.mesa = mesa;
 	}
 
 	public int getIdComanda() {
@@ -58,12 +58,12 @@ public class Comanda {
 		this.cliente = cliente;
 	}
 
-	public MesaCompuesta getMesaCompuesta() {
-		return mesaCompuesta;
+	public Mesa getMesa() {
+		return mesa;
 	}
 
-	public void setMesaCompuesta(MesaCompuesta mesaCompuesta) {
-		this.mesaCompuesta = mesaCompuesta;
+	public void setMesa(Mesa mesa) {
+		this.mesa = mesa;
 	}
 
 	public Set<ItemComanda> getItemsComanda() {

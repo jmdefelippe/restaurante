@@ -15,15 +15,14 @@ public class Mesa {
 	private EstadoMesa estadoMesa;
 	private String state;
 	
-	private MesaCompuesta mesaCompuesta;
+	private Set<Mesa> mesas;
 
 	public Mesa() {
 	}
 
-	public Mesa(int capacidad, EstadoMesa estadoMesa, MesaCompuesta mesaCompuesta) {
+	public Mesa(int capacidad, EstadoMesa estadoMesa) {
 		this.capacidad = capacidad;
 		this.state = getStringEstadoMesa(estadoMesa);
-		this.mesaCompuesta = mesaCompuesta;
 	}
 
 	public int getIdMesa() {
@@ -42,14 +41,15 @@ public class Mesa {
 		this.capacidad = capacidad;
 	}
 
-	public MesaCompuesta getMesaCompuesta() {
-		return mesaCompuesta;
+	
+	public Set<Mesa> getMesas() {
+		return mesas;
 	}
 
-	public void setMesaCompuesta(MesaCompuesta mesaCompuesta) {
-		this.mesaCompuesta = mesaCompuesta;
+	public void setMesas(Set<Mesa> mesas) {
+		this.mesas = mesas;
 	}
-	
+
 	@Override
 	public String toString() {
 		return  "Mesa [idMesa=" + idMesa +

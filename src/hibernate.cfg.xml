@@ -26,14 +26,14 @@
 <!-- 			<mapping resource="mapeos/ListaPrecio.hbm.xml"/> -->
 			<mapping resource="mapeos/Login.hbm.xml"/>
 <!-- 			<mapping resource="mapeos/Menu.hbm.xml"/> -->
-<!-- 			<mapping resource="mapeos/Mesa.hbm.xml"/> -->
+			<mapping resource="mapeos/Mesa.hbm.xml"/>
 <!-- 			<mapping resource="mapeos/MesaCompuesta.hbm.xml"/> -->
 <!-- 			<mapping resource="mapeos/Permiso.hbm.xml"/> -->
 <!-- 			<mapping resource="mapeos/Presentacion.hbm.xml"/> -->
 <!-- 			<mapping resource="mapeos/Producto.hbm.xml"/> -->
 			<mapping resource="mapeos/Restaurant.hbm.xml"/>	
 			<mapping resource="mapeos/Rubro.hbm.xml"/>
-<!-- 			<mapping resource="mapeos/Salon.hbm.xml"/> -->
+			<mapping resource="mapeos/Salon.hbm.xml"/>
 <!-- 			<mapping resource="mapeos/Stock.hbm.xml"/> -->
 			<mapping resource="mapeos/Subrubro.hbm.xml"/>
 <!-- 			<mapping resource="mapeos/Ticket.hbm.xml"/> -->

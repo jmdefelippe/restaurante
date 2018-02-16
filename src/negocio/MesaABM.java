@@ -4,7 +4,6 @@ import java.util.List;
 
 import dao.MesaDao;
 import datos.Mesa;
-import datos.MesaCompuesta;
 import datos.Salon;
 import state.EstadoMesa;
 
@@ -23,10 +22,10 @@ public class MesaABM {
 	}
 	
 	
-    public int agregar(int capacidad, EstadoMesa estadoMesa, MesaCompuesta mesaCompuesta) throws Exception{
-		Mesa mesa = new Mesa(capacidad, estadoMesa, mesaCompuesta);
+    public int agregar(int capacidad, EstadoMesa estadoMesa) throws Exception{
+		Mesa mesaAgregar = new Mesa(capacidad, estadoMesa);
 		
-		return dao.agregar(mesa);
+		return dao.agregar(mesaAgregar);
 	}
     
     public int agregar(Mesa mesa){

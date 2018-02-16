@@ -10,9 +10,9 @@
 		
 		<many-to-one name = "restaurant" class = "datos.Restaurant" column = "idRestaurant" not-null = "true"/>
 		
-		<set name = "mesasCompuestas" table = "mesaCompuesta" order-by = "idMesaCompuesta asc" inverse = "true" lazy = "true" fetch = "select">
+		<set name = "mesa" table = "mesa" order-by = "idMesa asc" inverse = "true" lazy = "true" fetch = "select">
 			<key column = "idSalon" not-null = "true"/>
-			<one-to-many class = "datos.MesaCompuesta"/>
+			<one-to-many class = "datos.Mesa"/>
 		</set>
 	
 	</class>

@@ -8,10 +8,13 @@
 		
 		<property column="capacidad" name="capacidad" type="int"/>
 		<property column="state" name="state" type="string"/>
-						
-		<!-- ACA HAY QUE MAPEAR EL STATE  -->
-	
-		<many-to-one name = "mesaCompuesta" class = "datos.MesaCompuesta" column = "idMesaCompuesta" not-null = "true"/>
+
+<!-- 		<many-to-one name = "mesas" class = "datos.Mesa" column = "idMesa" not-null = "true"/> -->
+
+		<set name = "mesa" table = "mesa" order-by = "idMesa asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idMesa" not-null = "true"/>
+			<one-to-many class = "datos.Mesa"/>
+		</set>
 
 	</class>
 </hibernate-mapping>
