@@ -1,7 +1,5 @@
 package datos;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 public class TipoUsuario {
@@ -10,7 +8,6 @@ public class TipoUsuario {
 	private String nombre;
 	
 	private Set<Usuario> usuarios;
-	private Set<Permiso> permisos;
 	
 	public TipoUsuario() {
 	}
@@ -43,13 +40,6 @@ public class TipoUsuario {
 		this.usuarios = usuarios;
 	}
 
-	public Set<Permiso> getPermisos() {
-		return permisos;
-	}
-
-	public void setPermisos(Set<Permiso> permisos) {
-		this.permisos = permisos;
-	}
 	
 	@Override
 	public String toString() {
@@ -80,26 +70,6 @@ public class TipoUsuario {
 		return true;
 	}
 
-	public boolean agregar(Permiso permiso) throws Exception{
-		List<Permiso> listaPermisos = new ArrayList(this.permisos);
-		
-		for(int i=0; i < listaPermisos.size(); i++){
-			if(listaPermisos.get(i).equals(permiso)) throw new Exception ("ERROR: el permiso ya esta en permisos");
-		}
-		return this.permisos.add(permiso);
-	}
-	
-	public boolean eliminar(Permiso permiso) throws Exception{
-		List<Permiso> listaPermisos = new ArrayList(this.permisos);
-		
-		boolean encontrado = false;
-		for (int i=0; i < listaPermisos.size(); i++){
-			if(listaPermisos.get(i).equals(permiso))
-				encontrado = true;
-		}
-		
-		if (!encontrado) throw new Exception("ERROR: el permiso no esta en lista");
-		return permisos.remove(permiso);
-	}
+
 		
 }

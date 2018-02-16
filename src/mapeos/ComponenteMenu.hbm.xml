@@ -7,34 +7,32 @@
 		<id column="idComponenteMenu" name="idComponenteMenu"><generator class="identity"/></id>
 		
 		<property column="nombre" name="nombre" type="string"/>
+		<property column="descripcion" name="descripcion" type="string"/>
 		<property column="imagen" name="imagen" type="string"/>
 		<property column="disponibilidad" name="disponibilidad" type="string"/>
 		<property column="estado" name="estado" type="boolean"/>
 		
 		<many-to-one name = "subrubro" class = "datos.Subrubro" column = "idSubrubro" not-null = "true"/>
 		
-		<one-to-one name="producto" class="datos.Producto" ></one-to-one>
-		<one-to-one name="vianda" class="datos.Vianda" ></one-to-one>
-		
-		<set name = "itemsTicket" table = "itemTicket" order-by = "idItemTicket asc" inverse = "true" lazy = "true" fetch = "select">
-			<key column = "idComponenteMenu" not-null = "true"/>
-			<one-to-many class = "datos.ItemTicket"/>
-		</set>
+<!-- 		<set name = "itemsTicket" table = "itemTicket" order-by = "idItemTicket asc" inverse = "true" lazy = "true" fetch = "select"> -->
+<!-- 			<key column = "idComponenteMenu" not-null = "true"/> -->
+<!-- 			<one-to-many class = "datos.ItemTicket"/> -->
+<!-- 		</set> -->
 
-		<set name = "itemsComanda" table = "itemComanda" order-by = "idItemComanda asc" inverse = "true" lazy = "true" fetch = "select">
-			<key column = "idComponenteMenu" not-null = "true"/>
-			<one-to-many class = "datos.ItemComanda"/>
-		</set>
+<!-- 		<set name = "itemsComanda" table = "itemComanda" order-by = "idItemComanda asc" inverse = "true" lazy = "true" fetch = "select"> -->
+<!-- 			<key column = "idComponenteMenu" not-null = "true"/> -->
+<!-- 			<one-to-many class = "datos.ItemComanda"/> -->
+<!-- 		</set> -->
 		
-		<set name = "itemsListaPrecios" table = "itemListaPrecios" order-by = "idItemListaPrecios asc" inverse = "true" lazy = "true" fetch = "select">
-			<key column = "idComponenteMenu" not-null = "true"/>
-			<one-to-many class = "datos.ItemListaPrecios"/>
-		</set>
+<!-- 		<set name = "itemsListaPrecios" table = "itemListaPrecios" order-by = "idItemListaPrecios asc" inverse = "true" lazy = "true" fetch = "select"> -->
+<!-- 			<key column = "idComponenteMenu" not-null = "true"/> -->
+<!-- 			<one-to-many class = "datos.ItemListaPrecios"/> -->
+<!-- 		</set> -->
 		
-		<set table="componenteMenuxmenu" name="menues" outer-join="true">
-			<key column="idComponenteMenu"/>
-			<many-to-many column="idMenu" class="datos.Menu"/>
-		</set>
+<!-- 		<set table="componenteMenuxmenu" name="menues" outer-join="true"> -->
+<!-- 			<key column="idComponenteMenu"/> -->
+<!-- 			<many-to-many column="idMenu" class="datos.Menu"/> -->
+<!-- 		</set> -->
 	
 	</class>
 </hibernate-mapping>

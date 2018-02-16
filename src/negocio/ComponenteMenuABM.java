@@ -5,14 +5,13 @@ import java.util.List;
 import dao.ComponenteMenuDao;
 import datos.ComponenteMenu;
 import datos.Menu;
-import datos.Permiso;
 import datos.Subrubro;
 import datos.TipoUsuario;
 
 public class ComponenteMenuABM {
 
 	ComponenteMenuDao dao = new ComponenteMenuDao();
-	/*
+
 	
 	public ComponenteMenu traerComponenteMenu(int idComponenteMenu) throws Exception{
 		ComponenteMenu componenteMenu = dao.traerComponenteMenu(idComponenteMenu);
@@ -33,22 +32,14 @@ public class ComponenteMenuABM {
 		return componenteMenu;
 	}
 
-	public ComponenteMenu traerComponenteMenuYMenues(int idComponenteMenu) throws Exception{
-		ComponenteMenu componenteMenu = dao.traerComponenteMenuYMenues(idComponenteMenu);
-			
-    	if (componenteMenu.equals(null))
-    		throw new Exception("Error:El componenteMenu no existe");
-		
-		return componenteMenu;
-	}
+
 	
-	
-    public int agregar(String nombre, String imagen, String disponibilidad, boolean estado, Subrubro subrubro) throws Exception{
+    public int agregar(String nombre, String descripcion, String imagen, String disponibilidad, boolean estado, Subrubro subrubro) throws Exception{
 		if(dao.existeComponenteMenu(nombre)){
 			throw new Exception("Error:El componenteMenu ya existe");
 		}
 		
-		ComponenteMenu componenteMenu = new ComponenteMenu(nombre, imagen, disponibilidad, estado, subrubro);
+		ComponenteMenu componenteMenu = new ComponenteMenu(nombre, descripcion, imagen, disponibilidad, estado, subrubro);
 		
 		return dao.agregar(componenteMenu);
 	}
@@ -102,5 +93,5 @@ public class ComponenteMenuABM {
 	public boolean eliminarMenu(ComponenteMenu componenteMenu, Menu menu)throws Exception{
 		return componenteMenu.eliminar(menu);
 	}
-	*/
+
 }

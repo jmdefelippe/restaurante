@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import datos.Restaurant;
 import datos.TipoUsuario;
 
 public class TipoUsuarioDao {
@@ -84,7 +85,7 @@ public class TipoUsuarioDao {
 		}
 		return objeto;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<TipoUsuario> traerTipoUsuario() throws HibernateException {
 		List<TipoUsuario> lista=null;
@@ -104,20 +105,6 @@ public class TipoUsuarioDao {
 			String hql= "from TipoUsuario t where t.idTipoUsuario =" + idTipoUsuario;
 			objeto=(TipoUsuario) session .createQuery(hql).uniqueResult();
 			Hibernate.initialize(objeto.getUsuarios());
-		}
-		finally {
-			session .close();
-		}
-		return objeto;
-	}
-	
-	public TipoUsuario traerTipoUsuarioYPermisos(int idTipoUsuario) throws HibernateException {
-		TipoUsuario objeto = null ;
-		try {
-			iniciaOperacion();
-			String hql= "from TipoUsuario t where t.idTipoUsuario =" + idTipoUsuario;
-			objeto=(TipoUsuario) session .createQuery(hql).uniqueResult();
-			Hibernate.initialize(objeto.getPermisos());
 		}
 		finally {
 			session .close();
@@ -153,8 +140,5 @@ public class TipoUsuarioDao {
 	
 		return objeto!=null;
 	}
-	
-	
-
 	
 }

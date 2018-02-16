@@ -6,7 +6,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import datos.ComponenteMenu;
-import datos.Permiso;
 
 public class ComponenteMenuDao {
 		private static Session session;
@@ -68,6 +67,7 @@ public class ComponenteMenuDao {
 		try {
 			iniciaOperacion();
 			objeto = (ComponenteMenu) session.get(ComponenteMenu.class, idComponenteMenu);
+			Hibernate.initialize(objeto.getSubrubro());
 		} finally {
 			session.close();
 		}
@@ -78,7 +78,13 @@ public class ComponenteMenuDao {
 		ComponenteMenu objeto = null;
 		try {
 			iniciaOperacion();
-			objeto = (ComponenteMenu) session.createQuery("from ComponenteMenu c where c.nombre=" + nombre).uniqueResult();
+			
+			String hql="from ComponenteMenu l where l.nombre=:nombre";
+			objeto=(ComponenteMenu) session.createQuery(hql).setParameter("nombre", (String)nombre).uniqueResult();
+	
+		}catch (HibernateException he) {
+			manejaExcepcion(he);
+			throw he;	
 		} finally {
 			session.close();
 		}
@@ -90,27 +96,13 @@ public class ComponenteMenuDao {
 		List<ComponenteMenu> lista=null;
 		try {
 			iniciaOperacion();
-			lista=session.createQuery("from ComponenteMenu c order by c.id").list();
+			lista=session.createQuery("from ComponenteMenu l order by l.id").list();
 		} finally {
 			session.close();
 		}
 		return lista;
 	}
 
-	public ComponenteMenu traerComponenteMenuYMenues(int idComponenteMenu) throws HibernateException{
-		ComponenteMenu componenteMenu = null;
-		try{
-			iniciaOperacion();
-			componenteMenu = (ComponenteMenu) session.createQuery("from ComponenteMenu c where c.idComponenteMenu= "+idComponenteMenu).uniqueResult();
-			Hibernate.initialize(componenteMenu.getMenues());
-		}catch(HibernateException he){
-			manejaExcepcion(he);
-			throw he;
-		}finally{
-			session.close();
-		}
-		return componenteMenu;
-	}
 	
 	public boolean existeComponenteMenu(int id) throws HibernateException {
 
@@ -118,7 +110,7 @@ public class ComponenteMenuDao {
 		
 		try {
 			iniciaOperacion();
-			objeto = (ComponenteMenu) session.createQuery("from ComponenteMenu c where c.idComponenteMenu ="+ Integer.toString(id)).uniqueResult();
+			objeto = (ComponenteMenu) session.createQuery("from ComponenteMenu l where l.idComponenteMenu ="+ Integer.toString(id)).uniqueResult();
 		} finally {
 			session.close();
 		}
@@ -133,7 +125,7 @@ public class ComponenteMenuDao {
 		
 		try {
 			iniciaOperacion();
-			objeto = (ComponenteMenu) session.createQuery("from ComponenteMenu c where c.nombre ='"+ nombre+"'").uniqueResult();
+			objeto = (ComponenteMenu) session.createQuery("from ComponenteMenu l where l.nombre ='"+ nombre+"'").uniqueResult();
 		} finally {
 			session.close();
 		}

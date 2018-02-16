@@ -3,8 +3,8 @@ package negocio;
 import java.util.List;
 
 import dao.TipoUsuarioDao;
-import datos.Permiso;
 import datos.TipoUsuario;
+import datos.Usuario;
 
 public class TipoUsuarioABM {
 
@@ -39,14 +39,6 @@ public class TipoUsuarioABM {
 		return tipoUsuario;
 	}
 	
-	public TipoUsuario traerTipoUsuarioYPermisos(int idTipoUsuario) throws Exception{
-		TipoUsuario tipoUsuario = dao.traerTipoUsuarioYPermisos(idTipoUsuario);
-			
-    	if (tipoUsuario.equals(null))
-    		throw new Exception("Error:El tipoUsuario no existe");
-		
-		return tipoUsuario;
-	}
 	
     public int agregar(String nombre) throws Exception{
 		if(dao.existeTipoUsuario(nombre)){
@@ -97,14 +89,6 @@ public class TipoUsuarioABM {
 	
 	public List<TipoUsuario> traerTipoUsuario(){
 		return dao.traerTipoUsuario();
-	}
-	
-	public boolean agregarPermiso(TipoUsuario tipoUsuario,Permiso permiso) throws Exception{
-		return tipoUsuario.agregar(permiso);
-	}
-		
-	public boolean eliminarPermiso(TipoUsuario tipoUsuario, Permiso permiso)throws Exception{
-		return tipoUsuario.eliminar(permiso);
 	}
 	
 }

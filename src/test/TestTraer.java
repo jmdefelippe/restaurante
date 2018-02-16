@@ -1,6 +1,7 @@
 package test;
 
 import negocio.CamareroABM;
+import negocio.ComponenteMenuABM;
 import negocio.LoginABM;
 import negocio.MesaABM;
 import negocio.RestaurantABM;
@@ -44,12 +45,18 @@ public class TestTraer {
 			System.out.println(restaurantABM.traerRestaurant(1));
 			System.out.println();
 			
-			SalonABM salonABM = new SalonABM();
-			System.out.println(salonABM.traerSalon(1));
-			System.out.println(salonABM.traerSalon(2));
+//			SalonABM salonABM = new SalonABM();
+//			System.out.println(salonABM.traerSalon(1));
+//			System.out.println(salonABM.traerSalon(2));
+//			
+//			MesaABM mesaABM = new MesaABM();
+//			System.out.println(mesaABM.traerMesa(1));
 			
-			MesaABM mesaABM = new MesaABM();
-			System.out.println(mesaABM.traerMesa(1));
+			ComponenteMenuABM componenteMenuABM = new ComponenteMenuABM();
+			System.out.println(componenteMenuABM.traerComponenteMenu(1));
+			System.out.println("Subrubro: " + componenteMenuABM.traerComponenteMenu(1).getSubrubro().getNombre());
+			
+
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

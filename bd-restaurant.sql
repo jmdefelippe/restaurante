@@ -619,3 +619,18 @@ INSERT INTO `bd-restaurant`.`itemcomanda` (`idItemComanda`, `cantidad`, `idCompo
 INSERT INTO `bd-restaurant`.`itemcomanda` (`idItemComanda`, `cantidad`, `idComponenteMenu`, `idComanda`) VALUES ('4', '2', '1', '2');
 INSERT INTO `bd-restaurant`.`itemcomanda` (`idItemComanda`, `cantidad`, `idComponenteMenu`, `idComanda`) VALUES ('5', '3', '4', '2');
 INSERT INTO `bd-restaurant`.`itemcomanda` (`idItemComanda`, `cantidad`, `idComponenteMenu`, `idComanda`) VALUES ('6', '1', '2', '3');
+
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='1';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='2';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='3';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='4';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='5';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='6';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='7';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='8';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='9';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='10';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='11';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='12';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='13';
+UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='14';

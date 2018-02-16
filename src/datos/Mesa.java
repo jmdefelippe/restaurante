@@ -25,6 +25,7 @@ public class Mesa {
 		this.state = getStringEstadoMesa(estadoMesa);
 	}
 
+		
 	public int getIdMesa() {
 		return idMesa;
 	}

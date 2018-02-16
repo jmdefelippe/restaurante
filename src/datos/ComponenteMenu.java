@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public abstract class ComponenteMenu {
+public class ComponenteMenu {
 
 	private int idComponenteMenu;
 	private String nombre;
+	private String descripcion;
 	private String imagen;
 	private String disponibilidad;
 	private boolean estado;
@@ -22,8 +23,9 @@ public abstract class ComponenteMenu {
 	public ComponenteMenu() {
 	}
 
-	public ComponenteMenu(String nombre, String imagen, String disponibilidad, boolean estado, Subrubro subrubro) {
+	public ComponenteMenu(String nombre, String descripcion, String imagen, String disponibilidad, boolean estado, Subrubro subrubro) {
 		this.nombre = nombre;
+		this.descripcion = descripcion;
 		this.imagen = imagen;
 		this.disponibilidad = disponibilidad;
 		this.estado = estado;
@@ -44,6 +46,14 @@ public abstract class ComponenteMenu {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public String getImagen() {
@@ -113,6 +123,7 @@ public abstract class ComponenteMenu {
 	@Override
 	public String toString() {
 		return  "ComponenteMenu [idComponenteMenu=" + idComponenteMenu +
+				", descripcion=" + descripcion +
 				", nombre=" + nombre +
 				", imagen=" + imagen +
 				", disponibilidad=" + disponibilidad +

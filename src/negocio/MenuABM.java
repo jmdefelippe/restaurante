@@ -6,7 +6,6 @@ import java.util.List;
 import dao.MenuDao;
 import datos.ComponenteMenu;
 import datos.Menu;
-import datos.Permiso;
 import datos.Restaurant;
 import datos.TipoUsuario;
 
