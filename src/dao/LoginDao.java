@@ -77,7 +77,13 @@ public class LoginDao {
 		Login objeto = null;
 		try {
 			iniciaOperacion();
-			objeto = (Login) session.createQuery("from Login l where l.nick=" + nick).uniqueResult();
+			
+			String hql="from Login l where l.nick=:nick";
+			objeto=(Login) session.createQuery(hql).setParameter("nick", (String)nick).uniqueResult();
+	
+		}catch (HibernateException he) {
+			manejaExcepcion(he);
+			throw he;	
 		} finally {
 			session.close();
 		}

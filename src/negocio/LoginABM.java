@@ -28,7 +28,7 @@ public class LoginABM {
 	public Login traerLogin(String nick) throws Exception{
 		Login login = dao.traerLogin(nick);
 		
-		if (login.equals(null))
+		if (login==null)
     		throw new Exception("Error:El login no existe");
 		
 		return login;
