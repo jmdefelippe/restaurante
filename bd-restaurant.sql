@@ -590,3 +590,32 @@ INSERT INTO `bd-restaurant`.`cliente` (`idCliente`, `nombre`, `apellido`, `dni`,
 INSERT INTO `bd-restaurant`.`cliente` (`idCliente`, `nombre`, `apellido`, `dni`, `idTipoCliente`) VALUES ('3', 'pablo', 'martinez', '35333333', '1');
 INSERT INTO `bd-restaurant`.`cliente` (`idCliente`, `nombre`, `apellido`, `dni`, `idTipoCliente`) VALUES ('4', 'david', 'ramirez', '35444444', '2');
 INSERT INTO `bd-restaurant`.`cliente` (`idCliente`, `nombre`, `apellido`, `dni`, `idTipoCliente`) VALUES ('5', 'sebastian', 'garcia', '35555555', '2');
+
+INSERT INTO `bd-restaurant`.`mesa` (`idMesa`, `capacidad`, `idMesaN`, `idSalon`) VALUES ('1', '2', '1', '1');
+INSERT INTO `bd-restaurant`.`mesa` (`idMesa`, `capacidad`, `idMesaN`, `idSalon`) VALUES ('2', '2', '2', '1');
+INSERT INTO `bd-restaurant`.`mesa` (`idMesa`, `capacidad`, `idMesaN`, `idSalon`) VALUES ('3', '4', '3', '1');
+INSERT INTO `bd-restaurant`.`mesa` (`idMesa`, `capacidad`, `idMesaN`, `idSalon`) VALUES ('4', '4', '4', '1');
+INSERT INTO `bd-restaurant`.`mesa` (`idMesa`, `capacidad`, `idMesaN`, `idSalon`) VALUES ('5', '4', '5', '1');
+INSERT INTO `bd-restaurant`.`mesa` (`idMesa`, `capacidad`, `idMesaN`, `idSalon`) VALUES ('6', '2', '6', '2');
+INSERT INTO `bd-restaurant`.`mesa` (`idMesa`, `capacidad`, `idMesaN`, `idSalon`) VALUES ('7', '2', '7', '2');
+INSERT INTO `bd-restaurant`.`mesa` (`idMesa`, `capacidad`, `idMesaN`, `idSalon`) VALUES ('8', '4', '8', '2');
+INSERT INTO `bd-restaurant`.`mesa` (`idMesa`, `capacidad`, `idMesaN`, `idSalon`) VALUES ('9', '4', '9', '2');
+INSERT INTO `bd-restaurant`.`mesa` (`idMesa`, `capacidad`, `idMesaN`, `idSalon`) VALUES ('10', '4', '10', '2');
+
+INSERT INTO `bd-restaurant`.`ticket` (`idTicket`, `pagado`, `cortesia`, `idRestaurant`, `idUsuario`) VALUES ('1', '0', '0', '1', '1');
+
+INSERT INTO `bd-restaurant`.`itemticket` (`idItemTicket`, `idComponenteMenu`, `idTicket`) VALUES ('1', '1', '1');
+INSERT INTO `bd-restaurant`.`itemticket` (`idItemTicket`, `idComponenteMenu`, `idTicket`) VALUES ('2', '2', '1');
+INSERT INTO `bd-restaurant`.`itemticket` (`idItemTicket`, `idComponenteMenu`, `idTicket`) VALUES ('3', '3', '1');
+INSERT INTO `bd-restaurant`.`itemticket` (`idItemTicket`, `idComponenteMenu`, `idTicket`) VALUES ('4', '4', '1');
+
+INSERT INTO `bd-restaurant`.`comanda` (`idComanda`, `idCamarero`, `idCliente`, `idMesa`, `idTicket`) VALUES ('1', '1', '1', '1', '1');
+INSERT INTO `bd-restaurant`.`comanda` (`idComanda`, `idCamarero`, `idCliente`, `idMesa`, `idTicket`) VALUES ('2', '1', '1', '1', '1');
+INSERT INTO `bd-restaurant`.`comanda` (`idComanda`, `idCamarero`, `idCliente`, `idMesa`, `idTicket`) VALUES ('3', '1', '1', '1', '1');
+
+INSERT INTO `bd-restaurant`.`itemcomanda` (`idItemComanda`, `cantidad`, `idComponenteMenu`, `idComanda`) VALUES ('1', '2', '1', '1');
+INSERT INTO `bd-restaurant`.`itemcomanda` (`idItemComanda`, `cantidad`, `idComponenteMenu`, `idComanda`) VALUES ('2', '4', '2', '1');
+INSERT INTO `bd-restaurant`.`itemcomanda` (`idItemComanda`, `cantidad`, `idComponenteMenu`, `idComanda`) VALUES ('3', '6', '3', '1');
+INSERT INTO `bd-restaurant`.`itemcomanda` (`idItemComanda`, `cantidad`, `idComponenteMenu`, `idComanda`) VALUES ('4', '2', '1', '2');
+INSERT INTO `bd-restaurant`.`itemcomanda` (`idItemComanda`, `cantidad`, `idComponenteMenu`, `idComanda`) VALUES ('5', '3', '4', '2');
+INSERT INTO `bd-restaurant`.`itemcomanda` (`idItemComanda`, `cantidad`, `idComponenteMenu`, `idComanda`) VALUES ('6', '1', '2', '3');

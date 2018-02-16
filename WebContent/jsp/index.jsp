@@ -19,7 +19,7 @@
 					<input type="checkbox" value="remember-me"> Recordarme
 				</label>
 			</div>
-	--> 	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	--> 	<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
 		</form>
     </div> 
     

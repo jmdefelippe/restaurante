@@ -22,10 +22,10 @@ public class TestTraer {
 			System.out.println(loginABM.traerLogin(1));
 			System.out.println();
 			
-			loginABM.traerLogin("asda");
+//			loginABM.traerLogin("asda");
 			
-			System.out.println(loginABM.traerLogin(100)); //login que no existe
-			System.out.println();
+//			System.out.println(loginABM.traerLogin(100)); //login que no existe
+//			System.out.println();
 
 			RubroABM rubroABM = new RubroABM();
 			SubrubroABM subrubroABM = new SubrubroABM();
