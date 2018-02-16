@@ -209,35 +209,35 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bd-restaurant`.`itemListaPrecio`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-restaurant`.`itemListaPrecio` (
-  `idItemListaPrecio` INT NOT NULL AUTO_INCREMENT,
-  `precio` FLOAT NULL,
-  `idComponenteMenu` INT NOT NULL,
-  PRIMARY KEY (`idItemListaPrecio`),
-  INDEX `fk_itemListaPrecio_componenteMenu1_idx` (`idComponenteMenu` ASC),
-  CONSTRAINT `fk_itemListaPrecio_componenteMenu1`
-    FOREIGN KEY (`idComponenteMenu`)
-    REFERENCES `bd-restaurant`.`componenteMenu` (`idComponenteMenu`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `bd-restaurant`.`listaPrecio`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bd-restaurant`.`listaPrecio` (
   `idListaPrecio` INT NOT NULL AUTO_INCREMENT,
   `fechaDesde` DATE NULL,
   `fechaHasta` DATE NULL,
-  `idItemListaPrecio` INT NOT NULL,
-  PRIMARY KEY (`idListaPrecio`),
-  INDEX `fk_listaPrecio_itemListaPrecio1_idx` (`idItemListaPrecio` ASC),
-  CONSTRAINT `fk_listaPrecio_itemListaPrecio1`
-    FOREIGN KEY (`idItemListaPrecio`)
-    REFERENCES `bd-restaurant`.`itemListaPrecio` (`idItemListaPrecio`)
+  PRIMARY KEY (`idListaPrecio`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bd-restaurant`.`itemListaPrecio`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bd-restaurant`.`itemListaPrecio` (
+  `idItemListaPrecio` INT NOT NULL AUTO_INCREMENT,
+  `precio` FLOAT NULL,
+  `idComponenteMenu` INT NOT NULL,
+  `idListaPrecio` INT NOT NULL,
+  PRIMARY KEY (`idItemListaPrecio`),
+  INDEX `fk_itemListaPrecio_componenteMenu1_idx` (`idComponenteMenu` ASC),
+  INDEX `fk_itemListaPrecio_listaPrecio1_idx` (`idListaPrecio` ASC),
+  CONSTRAINT `fk_itemListaPrecio_componenteMenu1`
+    FOREIGN KEY (`idComponenteMenu`)
+    REFERENCES `bd-restaurant`.`componenteMenu` (`idComponenteMenu`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_itemListaPrecio_listaPrecio1`
+    FOREIGN KEY (`idListaPrecio`)
+    REFERENCES `bd-restaurant`.`listaPrecio` (`idListaPrecio`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -530,17 +530,56 @@ INSERT INTO `bd-restaurant`.`camarero` (`idCamarero`, `dni`, `nombre`, `apellido
 INSERT INTO `bd-restaurant`.`camarero` (`idCamarero`, `dni`, `nombre`, `apellido`) VALUES ('2', '30548789', 'sergio', 'gonzalez');
 INSERT INTO `bd-restaurant`.`camarero` (`idCamarero`, `dni`, `nombre`, `apellido`) VALUES ('3', '31564859', 'carlos', 'perez');
 
+INSERT INTO `bd-restaurant`.`restaurant` (`idRestaurant`, `nombre`, `telefono`, `direccion`, `localidad`, `correoElectronico`) VALUES ('1', 'restaurant unla', '42401234', 'pergamino 1234', 'lanus este', 'restaurantunla@gmail.com');
 
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('1', 'ravioles con salsa', '1');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('2', 'ñoquis con salsa', '1');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('3', 'tallarines con salsa', '1');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('4', 'napolitana con fritas', '2');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('5', 'suprema con pure', '2');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('6', 'filet de merluza con fritas', '3');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('7', 'sandwich de milanesa completo', '4');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('8', 'sandwich de hamburguesa completo', '4');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('9', 'coca cola 600 ml', '5');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('10', 'sprite 600 ml', '5');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('11', 'jugo de naranja', '6');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('12', 'agua mineral 500 ml', '7');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('13', 'quilmes 1l', '8');
+INSERT INTO `bd-restaurant`.`componentemenu` (`idComponenteMenu`, `nombre`, `idSubrubro`) VALUES ('14', 'stella artois 1l', '8');
 
+INSERT INTO `bd-restaurant`.`salon` (`idSalon`, `descripcion`, `idRestaurant`) VALUES ('1', 'abajo', '1');
+INSERT INTO `bd-restaurant`.`salon` (`idSalon`, `descripcion`, `idRestaurant`) VALUES ('2', 'arriba', '1');
 
+INSERT INTO `bd-restaurant`.`listaprecio` (`idListaPrecio`) VALUES ('1');
+INSERT INTO `bd-restaurant`.`listaprecio` (`idListaPrecio`) VALUES ('2');
 
-
-
-
-
-
-
-
-
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('1', '150', '1', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('2', '160', '1', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('3', '150', '2', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('4', '160', '2', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('5', '150', '3', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('6', '160', '3', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('7', '170', '4', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('8', '180', '4', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('9', '150', '5', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('10', '160', '5', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('11', '160', '6', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('12', '170', '6', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('13', '120', '7', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('14', '130', '7', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('15', '110', '8', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('16', '120', '8', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('17', '50', '9', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('18', '55', '9', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('19', '50', '10', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('20', '55', '10', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('21', '40', '11', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('22', '45', '11', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('23', '45', '12', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('24', '50', '12', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('25', '100', '13', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('26', '110', '13', '2');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('27', '140', '14', '1');
+INSERT INTO `bd-restaurant`.`itemlistaprecio` (`idItemListaPrecio`, `precio`, `idComponenteMenu`, `idListaPrecio`) VALUES ('28', '150', '14', '2');
 
 
