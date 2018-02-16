@@ -27,4 +27,12 @@ http://www.generatedata.com/
 	LINES TERMINATED BY '\n'
 	(campo1, campo2, campo3);
 
+
 Acordate poner los archivos .csv en c:\ y guardarlo como archivo delimitado por ;
+
+
+LOAD DATA LOCAL INFILE 'C:\tipoUsuarioDB.csv'
+	INTO TABLE tipousuario
+	FIELDS TERMINATED BY ';'
+	LINES TERMINATED BY '\n'
+	(nombre);

@@ -8,21 +8,20 @@
     <meta name="author" content="">
     <title>Restaurante</title>
 
+	<link href="css/signin.css" rel="stylesheet">
+	<link href="css/sticky-footer.css" rel="stylesheet">
 
-<link href="css/signin.css" rel="stylesheet">
-<link href="css/sticky-footer.css" rel="stylesheet">
+	<!-- <link href="css/bootstrap.min.css"  rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script> -->
 
-<!-- <link href="css/bootstrap.min.css"  rel="stylesheet">
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script> -->
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
-<link rel="shortcut icon" type="image/png" href="imagenes/favicon.png" />
+	<link rel="shortcut icon" type="image/png" href="imagenes/favicon.png" />
 
 </head>
-
+<body>
 </body>
 </html>
