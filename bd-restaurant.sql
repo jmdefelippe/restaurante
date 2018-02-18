@@ -634,3 +634,40 @@ UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu
 UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='12';
 UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='13';
 UPDATE `bd-restaurant`.`componentemenu` SET `estado`='1' WHERE `idComponenteMenu`='14';
+
+ALTER TABLE `bd-restaurant`.`producto` 
+DROP FOREIGN KEY `fk_producto_conversion1`;
+ALTER TABLE `bd-restaurant`.`producto` 
+DROP COLUMN `idConversion`,
+DROP INDEX `fk_producto_conversion1_idx` ;
+
+DROP TABLE `bd-restaurant`.`conversion`;
+
+ALTER TABLE `bd-restaurant`.`vianda` 
+DROP FOREIGN KEY `fk_vianda_producto1`,
+DROP FOREIGN KEY `fk_vianda_plato1`;
+ALTER TABLE `bd-restaurant`.`vianda` 
+DROP COLUMN `idProducto`,
+DROP COLUMN `idPlato`,
+DROP INDEX `fk_vianda_producto1_idx` ,
+DROP INDEX `fk_vianda_plato1_idx` ;
+
+DROP TABLE `bd-restaurant`.`vianda`;
+
+ALTER TABLE `bd-restaurant`.`ingrediente` 
+DROP FOREIGN KEY `fk_ingrediente_plato1`;
+ALTER TABLE `bd-restaurant`.`ingrediente` 
+DROP COLUMN `idPlato`,
+DROP INDEX `fk_ingrediente_plato1_idx` ;
+
+DROP TABLE `bd-restaurant`.`ingrediente`;
+
+DROP TABLE `bd-restaurant`.`plato`;
+
+DROP TABLE `bd-restaurant`.`producto`;
+
+
+
+
+
+
