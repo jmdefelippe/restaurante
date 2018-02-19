@@ -52,4 +52,13 @@ public class ItemListaPrecioABM {
 		return dao.traerItemListaPrecio();
 	}
 	
+	public List<ItemListaPrecio> traerItemListaPrecio(ListaPrecio cliente) throws Exception{
+		List<ItemListaPrecio> lstItemListaPrecio = dao.traerItemListaPrecio(cliente);
+			
+//    	if (lstItemListaPrecio.equals(null))
+//    		throw new Exception("Error:El cliente no tiene ningun prestamo");
+		
+		return lstItemListaPrecio;
+	}
+	
 }

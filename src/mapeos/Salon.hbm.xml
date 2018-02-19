@@ -10,10 +10,10 @@
 		
 		<many-to-one name = "restaurant" class = "datos.Restaurant" column = "idRestaurant" not-null = "true"/>
 		
-		<set name = "mesa" table = "mesa" order-by = "idMesa asc" inverse = "true" lazy = "true" fetch = "select">
-			<key column = "idSalon" not-null = "true"/>
-			<one-to-many class = "datos.Mesa"/>
-		</set>
+<!-- 		<set name = "mesa" table = "mesa" order-by = "idMesa asc" inverse = "true" lazy = "true" fetch = "select"> -->
+<!-- 			<key column = "idSalon" not-null = "true"/> -->
+<!-- 			<one-to-many class = "datos.Mesa"/> -->
+<!-- 		</set> -->
 	
 	</class>
 </hibernate-mapping>

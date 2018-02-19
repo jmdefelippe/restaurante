@@ -1,9 +1,12 @@
 package test;
 
+import datos.ItemListaPrecio;
+import datos.ListaPrecio;
 import negocio.CamareroABM;
 import negocio.ClienteABM;
 import negocio.ComandaABM;
 import negocio.ComponenteMenuABM;
+import negocio.ItemComandaABM;
 import negocio.ItemListaPrecioABM;
 import negocio.ItemTicketABM;
 import negocio.ListaPrecioABM;
@@ -52,10 +55,7 @@ public class TestTraer {
 			System.out.println(restaurantABM.traerRestaurant(1));
 			System.out.println();
 			
-//			SalonABM salonABM = new SalonABM();
-//			System.out.println(salonABM.traerSalon(1));
-//			System.out.println(salonABM.traerSalon(2));
-//			
+		
 //			MesaABM mesaABM = new MesaABM();
 //			System.out.println(mesaABM.traerMesa(1));
 			
@@ -99,15 +99,26 @@ public class TestTraer {
 			System.out.println("Tipo cliente: " + comandaABM.traerComanda(1).getCliente().getTipoCliente().getNombre());
 			System.out.println("Tiene la lista de precios: " + comandaABM.traerComanda(1).getCliente().getTipoCliente().getListaPrecio().getIdListaPrecio());
 			
-			System.out.println("" + listaPrecioABM.);
 			
+			System.out.println("Traer listaPrecio e itemsListaPrecios: " + comandaABM.traerComanda(1).getCliente().getTipoCliente().getListaPrecio().getIdListaPrecio());
 			
-//			int i = 0;
-//			while(i <= comandaABM.traerComanda(1).getCliente().getTipoCliente().getListaPrecio().getItemsListaPrecio().size()){
-//				System.out.println("Tiene la lista de precios: " + comandaABM.traerComanda(1).getCliente().getTipoCliente().getListaPrecio().getItemsListaPrecio());
-//				i++;
-//		}
+			int idListaPrecio = comandaABM.traerComanda(1).getCliente().getTipoCliente().getListaPrecio().getIdListaPrecio();
+			ListaPrecio l = listaPrecioABM.traerListaPrecioEItemsListaPrecio(idListaPrecio);
+			System.out.println( "\n---> Traer ListaPrecio e itemsListaPrecio	idLista=" +idListaPrecio);
+			System.out.println( "\n" +l);
+			for (ItemListaPrecio i: l.getItemsListaPrecio())
+				System.out.println("\n" + i);
 			System.out.println();
+			
+			ItemComandaABM itemComandaABM = new ItemComandaABM();
+			System.out.println("ItemComanda id: " + itemComandaABM.traerItemComanda(1).getIdItemComanda());
+			System.out.println("ItemComanda cantidad: " + itemComandaABM.traerItemComanda(1).getCantidad());
+			System.out.println("Componente menu: " + itemComandaABM.traerItemComanda(1).getComponenteMenu().getNombre());
+			System.out.println();
+			
+			SalonABM salonABM = new SalonABM();
+			System.out.println("Salon 1: " + salonABM.traerSalon(1).getDescripcion() + " pertenece al restaurant llamado: " + salonABM.traerSalon(1).getRestaurant().getNombre());
+			System.out.println("Salon 2: " + salonABM.traerSalon(2).getDescripcion());
 			
 			
 			

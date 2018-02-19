@@ -67,6 +67,7 @@ public class ItemComandaDao {
 		try {
 			iniciaOperacion();
 			objeto = (ItemComanda) session.get(ItemComanda.class, idItemComanda);
+			Hibernate.initialize(objeto.getComponenteMenu());
 		} finally {
 			session.close();
 		}

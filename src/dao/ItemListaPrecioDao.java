@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import datos.ItemListaPrecio;
+import datos.ListaPrecio;
 
 public class ItemListaPrecioDao {
 		private static Session session;
@@ -100,6 +101,19 @@ public class ItemListaPrecioDao {
 		}
 	
 		return objeto!=null;
-	}	
+	}
+	
+	@SuppressWarnings ( "unchecked" )
+	public List<ItemListaPrecio> traerItemListaPrecio(ListaPrecio c) throws HibernateException {
+		List<ItemListaPrecio> lista= null ;
+		try {
+			iniciaOperacion();
+			String hQL= "from ItemListaPrecio p inner join fetch p.cliente c where c.idListaPrecio=" +c.getIdListaPrecio();
+			lista = session .createQuery(hQL).list();
+		} finally {
+			session .close();
+		}
+		return lista;
+	}
 	
 }

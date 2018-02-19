@@ -47,14 +47,6 @@ public class ListaPrecio {
 		this.tiposCliente = tiposCliente;
 	}
 	
-	@Override
-	public String toString() {
-		return  "ListaPrecio [idListaPrecio=" + idListaPrecio +
-				", fechaDesde=" + Funciones.traerFechaCorta(fechaDesde) +
-				", fechaHasta=" + Funciones.traerFechaCorta(fechaHasta) +
-				"]";
-	}
-
 	public GregorianCalendar getFechaDesde() {
 		return fechaDesde;
 	}
@@ -71,6 +63,12 @@ public class ListaPrecio {
 		this.fechaHasta = fechaHasta;
 	}	
 	
-	
+	@Override
+	public String toString() {
+		return  "ListaPrecio [idListaPrecio=" + idListaPrecio +
+//				", fechaDesde=" + Funciones.traerFechaCorta(fechaDesde) +
+//				", fechaHasta=" + Funciones.traerFechaCorta(fechaHasta) +
+				"]";
+	}	
 	
 }

@@ -67,6 +67,7 @@ public class SalonDao {
 		try {
 			iniciaOperacion();
 			objeto = (Salon) session.get(Salon.class, idSalon);
+			Hibernate.initialize(objeto.getRestaurant());
 		} finally {
 			session.close();
 		}

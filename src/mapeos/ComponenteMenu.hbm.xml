@@ -19,10 +19,10 @@
 			<one-to-many class = "datos.ItemTicket"/>
 		</set>
 
-<!-- 		<set name = "itemsComanda" table = "itemComanda" order-by = "idItemComanda asc" inverse = "true" lazy = "true" fetch = "select"> -->
-<!-- 			<key column = "idComponenteMenu" not-null = "true"/> -->
-<!-- 			<one-to-many class = "datos.ItemComanda"/> -->
-<!-- 		</set> -->
+		<set name = "itemsComanda" table = "itemComanda" order-by = "idItemComanda asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idComponenteMenu" not-null = "true"/>
+			<one-to-many class = "datos.ItemComanda"/>
+		</set>
 		
 		<set name = "itemsListaPrecios" table = "itemListaPrecio" order-by = "idItemListaPrecio asc" inverse = "true" lazy = "true" fetch = "select">
 			<key column = "idComponenteMenu" not-null = "true"/>

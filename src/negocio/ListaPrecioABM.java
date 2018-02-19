@@ -42,9 +42,9 @@ public class ListaPrecioABM {
 	
 
 
-	public ListaPrecio traerListaPrecio(int idListaPrecio){
-		return dao.traerListaPrecio(idListaPrecio);
-	}
+//	public ListaPrecio traerListaPrecio(int idListaPrecio){
+//		return dao.traerListaPrecio(idListaPrecio);
+//	}
 	
 	public ListaPrecio traerListaPrecioEItems(int idListaPrecio){
 		return dao.traerListaPrecioEItems(idListaPrecio);
@@ -61,5 +61,15 @@ public class ListaPrecioABM {
 		
 		return dao.traerListaPrecio(fechaDesde, fechaHasta);
 	}
+	
+	public ListaPrecio traerListaPrecioEItemsListaPrecio(int idListaPrecio) throws Exception{
+		ListaPrecio listaPrecio = dao.traerListaPrecioEItemsListaPrecio(idListaPrecio);
+			
+    	if (listaPrecio.equals(null))
+    		throw new Exception("Error:La listaPrecio no existe");
+		
+		return listaPrecio;
+	}
+	
 	
 }

@@ -6,8 +6,13 @@ public class ItemComanda {
 	private int cantidad;
 	
 	private ComponenteMenu componenteMenu;
-		
+	private Comanda comanda;
+	
 	public ItemComanda() {
+	}
+			
+	public ItemComanda(int cantidad) {
+		this.cantidad = cantidad;
 	}
 
 	public ItemComanda(int cantidad, ComponenteMenu componenteMenu) {
@@ -38,7 +43,15 @@ public class ItemComanda {
 	public void setComponenteMenu(ComponenteMenu componenteMenu) {
 		this.componenteMenu = componenteMenu;
 	}
-	
+			
+	public Comanda getComanda() {
+		return comanda;
+	}
+
+	public void setComanda(Comanda comanda) {
+		this.comanda = comanda;
+	}
+
 	@Override
 	public String toString() {
 		return  "ItemComanda [idItemComanda=" + idItemComanda +

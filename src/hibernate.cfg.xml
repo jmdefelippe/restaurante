@@ -16,10 +16,8 @@
 			<mapping resource="mapeos/Cliente.hbm.xml"/>
 			<mapping resource="mapeos/Comanda.hbm.xml"/>	
 			<mapping resource="mapeos/ComponenteMenu.hbm.xml"/>
-<!-- 			<mapping resource="mapeos/ItemComanda.hbm.xml"/> -->
-<!-- 			<mapping resource="mapeos/ItemComposicion.hbm.xml"/> -->
+			<mapping resource="mapeos/ItemComanda.hbm.xml"/>
 			<mapping resource="mapeos/ItemListaPrecio.hbm.xml"/>
-<!-- 			<mapping resource="mapeos/ItemStock.hbm.xml"/>	 -->
 			<mapping resource="mapeos/ItemTicket.hbm.xml"/>	
 			<mapping resource="mapeos/ListaPrecio.hbm.xml"/>
 			<mapping resource="mapeos/Login.hbm.xml"/>
@@ -27,7 +25,7 @@
 <!-- 			<mapping resource="mapeos/Mesa.hbm.xml"/> -->
 			<mapping resource="mapeos/Restaurant.hbm.xml"/>	
 			<mapping resource="mapeos/Rubro.hbm.xml"/>
-<!-- 			<mapping resource="mapeos/Salon.hbm.xml"/> -->
+			<mapping resource="mapeos/Salon.hbm.xml"/>
 			<mapping resource="mapeos/Subrubro.hbm.xml"/>
 			<mapping resource="mapeos/Ticket.hbm.xml"/>
 			<mapping resource="mapeos/TipoCliente.hbm.xml"/>
