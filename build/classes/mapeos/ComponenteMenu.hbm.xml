@@ -14,20 +14,20 @@
 		
 		<many-to-one name = "subrubro" class = "datos.Subrubro" column = "idSubrubro" not-null = "true"/>
 		
-<!-- 		<set name = "itemsTicket" table = "itemTicket" order-by = "idItemTicket asc" inverse = "true" lazy = "true" fetch = "select"> -->
-<!-- 			<key column = "idComponenteMenu" not-null = "true"/> -->
-<!-- 			<one-to-many class = "datos.ItemTicket"/> -->
-<!-- 		</set> -->
+		<set name = "itemsTicket" table = "itemTicket" order-by = "idItemTicket asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idComponenteMenu" not-null = "true"/>
+			<one-to-many class = "datos.ItemTicket"/>
+		</set>
 
 <!-- 		<set name = "itemsComanda" table = "itemComanda" order-by = "idItemComanda asc" inverse = "true" lazy = "true" fetch = "select"> -->
 <!-- 			<key column = "idComponenteMenu" not-null = "true"/> -->
 <!-- 			<one-to-many class = "datos.ItemComanda"/> -->
 <!-- 		</set> -->
 		
-<!-- 		<set name = "itemsListaPrecios" table = "itemListaPrecios" order-by = "idItemListaPrecios asc" inverse = "true" lazy = "true" fetch = "select"> -->
-<!-- 			<key column = "idComponenteMenu" not-null = "true"/> -->
-<!-- 			<one-to-many class = "datos.ItemListaPrecios"/> -->
-<!-- 		</set> -->
+		<set name = "itemsListaPrecios" table = "itemListaPrecio" order-by = "idItemListaPrecio asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idComponenteMenu" not-null = "true"/>
+			<one-to-many class = "datos.ItemListaPrecio"/>
+		</set>
 		
 <!-- 		<set table="componenteMenuxmenu" name="menues" outer-join="true"> -->
 <!-- 			<key column="idComponenteMenu"/> -->

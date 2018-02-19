@@ -70,6 +70,16 @@ public class ComandaDao {
 		try {
 			iniciaOperacion();
 			objeto = (Comanda) session.get(Comanda.class, idComanda);
+			Hibernate.initialize(objeto.getCamarero());
+			Hibernate.initialize(objeto.getCliente());
+			Hibernate.initialize(objeto.getCliente().getTipoCliente());
+			Hibernate.initialize(objeto.getCliente().getTipoCliente().getListaPrecio());
+//			Hibernate.initialize(objeto.getCliente().getTipoCliente().getListaPrecio().getItemsListaPrecio());
+//			Hibernate.initialize(objeto.getCliente().getTipoCliente().getListaPrecio().getItemsListaPrecio());
+//			Hibernate.initialize(objeto.getTicket());
+		
+			//Hibernate.initialize(objeto.getItemComanda());
+			//Hibernate.initialize(objeto.getMesa());
 		} finally {
 			session.close();
 		}

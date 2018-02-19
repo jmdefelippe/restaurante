@@ -13,5 +13,7 @@
 			<one-to-many class = "datos.Cliente"/>
 		</set>
 		
+		<many-to-one name = "listaPrecio" class = "datos.ListaPrecio" column = "idListaPrecio" not-null = "true"/>
+		
 	</class>
 </hibernate-mapping>

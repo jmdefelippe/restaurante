@@ -67,6 +67,8 @@ public class ClienteDao {
 		try {
 			iniciaOperacion();
 			objeto = (Cliente) session.get(Cliente.class, idCliente);
+			Hibernate.initialize(objeto.getTipoCliente());
+			Hibernate.initialize(objeto.getTipoCliente().getListaPrecio());
 		} finally {
 			session.close();
 		}
@@ -78,6 +80,7 @@ public class ClienteDao {
 		try {
 			iniciaOperacion();
 			objeto = (Cliente) session.createQuery("from Cliente c where c.dni=" + Long.toString(dni)).uniqueResult();
+			Hibernate.initialize(objeto.getTipoCliente());
 		} finally {
 			session.close();
 		}

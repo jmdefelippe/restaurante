@@ -7,8 +7,26 @@ public class ItemTicket {
 	private float importe;
 	
 	private ComponenteMenu componenteMenu;
+	private Ticket ticket;
+	
 	
 	public ItemTicket() {
+	}
+
+	public Ticket getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;
+	}
+	
+	
+
+	public ItemTicket(int cantidad, float importe) {
+		super();
+		this.cantidad = cantidad;
+		this.importe = importe;
 	}
 
 	public ItemTicket(int cantidad, float importe, ComponenteMenu componenteMenu) {
@@ -32,7 +50,7 @@ public class ItemTicket {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-	
+
 	public float getImporte() {
 		return importe;
 	}

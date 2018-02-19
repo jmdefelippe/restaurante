@@ -76,31 +76,43 @@ public class ListaPrecioDao {
 		return objeto;
 	}
 	
-	
-	@SuppressWarnings("unchecked")
-	public List<ListaPrecio> traerListaPrecio() throws HibernateException {
-		List<ListaPrecio> lista=null;
+	public ListaPrecio traerListaPrecioEItems(int idListaPrecio) throws HibernateException {
+		ListaPrecio objeto = null;
 		try {
 			iniciaOperacion();
-			lista=session.createQuery("from ListaPrecio l order by l.id").list();
+			objeto = (ListaPrecio) session.get(ListaPrecio.class, idListaPrecio);
+			Hibernate.initialize(objeto.getItemsListaPrecio());
 		} finally {
 			session.close();
 		}
-		return lista;
+		return objeto;
 	}
 	
+	
 	@SuppressWarnings("unchecked")
-	public List<ListaPrecio> traerListaPrecio(GregorianCalendar fechaDesde, GregorianCalendar fechaHasta){
-		List<ListaPrecio> lista = null;
-		try {
-			iniciaOperacion();
-			lista = session.createQuery("from ListaPrecio l where l.fecha >=" + Funciones.traerFechaQuery(fechaDesde) + " and l.fecha <="+ Funciones.traerFechaQuery(fechaHasta) + " order by l.fecha asc").list();
-		} finally {
-			session.close();
-		}
-		return lista;
-		
-	}
+//	public List<ListaPrecio> traerListaPrecio() throws HibernateException {
+//		List<ListaPrecio> lista=null;
+//		try {
+//			iniciaOperacion();
+//			lista=session.createQuery("from ListaPrecio l order by l.id").list();
+//		} finally {
+//			session.close();
+//		}
+//		return lista;
+//	}
+//	
+//	@SuppressWarnings("unchecked")
+//	public List<ListaPrecio> traerListaPrecio(GregorianCalendar fechaDesde, GregorianCalendar fechaHasta){
+//		List<ListaPrecio> lista = null;
+//		try {
+//			iniciaOperacion();
+//			lista = session.createQuery("from ListaPrecio l where l.fecha >=" + Funciones.traerFechaQuery(fechaDesde) + " and l.fecha <="+ Funciones.traerFechaQuery(fechaHasta) + " order by l.fecha asc").list();
+//		} finally {
+//			session.close();
+//		}
+//		return lista;
+//		
+//	}
 
 	
 	public boolean existeListaPrecio(int id) throws HibernateException {

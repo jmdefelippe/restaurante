@@ -69,6 +69,8 @@ public class TipoClienteDao {
 		try {
 			iniciaOperacion();
 			objeto = (TipoCliente) session.get(TipoCliente.class, idTipoCliente);
+			Hibernate.initialize(objeto.getListaPrecio());
+//			Hibernate.initialize(objeto.getListaPrecio().getItemsListaPrecio());
 		} finally {
 			session.close();
 		}

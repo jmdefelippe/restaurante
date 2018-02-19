@@ -7,6 +7,8 @@ public class TipoCliente {
 	private int idTipoCliente;
 	private String nombre;
 	
+	private ListaPrecio listaPrecio;
+	
 	private Set<Cliente> clientes;
 
 	public TipoCliente() {
@@ -30,6 +32,16 @@ public class TipoCliente {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	
+
+	public ListaPrecio getListaPrecio() {
+		return listaPrecio;
+	}
+
+	public void setListaPrecio(ListaPrecio listaPrecio) {
+		this.listaPrecio = listaPrecio;
 	}
 
 	public Set<Cliente> getClientes() {

@@ -67,6 +67,8 @@ public class ItemTicketDao {
 		try {
 			iniciaOperacion();
 			objeto = (ItemTicket) session.get(ItemTicket.class, idItemTicket);
+			Hibernate.initialize(objeto.getTicket());
+			Hibernate.initialize(objeto.getComponenteMenu());
 		} finally {
 			session.close();
 		}

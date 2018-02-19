@@ -666,6 +666,16 @@ DROP TABLE `bd-restaurant`.`plato`;
 
 DROP TABLE `bd-restaurant`.`producto`;
 
+UPDATE `bd-restaurant`.`itemticket` SET `cantidad`='0' WHERE `idItemTicket`='1';
+UPDATE `bd-restaurant`.`itemticket` SET `cantidad`='0' WHERE `idItemTicket`='2';
+UPDATE `bd-restaurant`.`itemticket` SET `cantidad`='0' WHERE `idItemTicket`='3';
+UPDATE `bd-restaurant`.`itemticket` SET `cantidad`='0' WHERE `idItemTicket`='4';
+
+UPDATE `bd-restaurant`.`itemticket` SET `importe`='0' WHERE `idItemTicket`='1';
+UPDATE `bd-restaurant`.`itemticket` SET `importe`='0' WHERE `idItemTicket`='2';
+UPDATE `bd-restaurant`.`itemticket` SET `importe`='0' WHERE `idItemTicket`='3';
+UPDATE `bd-restaurant`.`itemticket` SET `importe`='0' WHERE `idItemTicket`='4';
+
 
 
 

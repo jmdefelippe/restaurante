@@ -6,8 +6,22 @@ public class ItemListaPrecio {
 	private float precio;
 	
 	private ComponenteMenu componenteMenu;
+	private ListaPrecio listaPrecio;
 	
+	public ListaPrecio getListaPrecio() {
+		return listaPrecio;
+	}
+
+	public void setListaPrecio(ListaPrecio listaPrecio) {
+		this.listaPrecio = listaPrecio;
+	}
+
 	public ItemListaPrecio() {
+	}
+		
+	public ItemListaPrecio(float precio) {
+		super();
+		this.precio = precio;
 	}
 
 	public ItemListaPrecio(float precio, ComponenteMenu componenteMenu) {
@@ -27,7 +41,7 @@ public class ItemListaPrecio {
 		return precio;
 	}
 
-	public void setPrecio(int precio) {
+	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
 

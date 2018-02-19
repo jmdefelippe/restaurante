@@ -68,6 +68,7 @@ public class ComponenteMenuDao {
 			iniciaOperacion();
 			objeto = (ComponenteMenu) session.get(ComponenteMenu.class, idComponenteMenu);
 			Hibernate.initialize(objeto.getSubrubro());
+			Hibernate.initialize(objeto.getSubrubro().getRubro());
 		} finally {
 			session.close();
 		}

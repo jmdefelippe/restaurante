@@ -13,6 +13,7 @@ public class Comanda {
 	private Camarero camarero;
 	private Cliente cliente;
 	private Mesa mesa;
+	private Ticket ticket;
 	
 	private Set<ItemComanda> itemsComanda;
 
@@ -65,6 +66,14 @@ public class Comanda {
 	public void setMesa(Mesa mesa) {
 		this.mesa = mesa;
 	}
+		
+	public Ticket getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;
+	}
 
 	public Set<ItemComanda> getItemsComanda() {
 		return itemsComanda;
@@ -73,6 +82,7 @@ public class Comanda {
 	public void setItemsComanda(Set<ItemComanda> itemsComanda) {
 		this.itemsComanda = itemsComanda;
 	}
+	
 	
 	@Override
 	public String toString() {

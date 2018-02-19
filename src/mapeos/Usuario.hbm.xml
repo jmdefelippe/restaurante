@@ -15,10 +15,10 @@
 		
 		<many-to-one name = "tipoUsuario" class = "datos.TipoUsuario" column = "idTipoUsuario" not-null = "true"/>
 		
-<!-- 		<set name = "tickets" table = "ticket" order-by = "idTicket asc" inverse = "true" lazy = "true" fetch = "select" > -->
-<!-- 			<key column = "idUsuario" not-null = "true" /> -->
-<!-- 			<one-to-many class = "datos.Ticket"/> -->
-<!-- 		</set> -->
+		<set name = "tickets" table = "ticket" order-by = "idTicket asc" inverse = "true" lazy = "true" fetch = "select" >
+			<key column = "idUsuario" not-null = "true" />
+			<one-to-many class = "datos.Ticket"/>
+		</set>
 		
 	</class>
 </hibernate-mapping>

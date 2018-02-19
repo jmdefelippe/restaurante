@@ -67,6 +67,7 @@ public class ItemListaPrecioDao {
 		try {
 			iniciaOperacion();
 			objeto = (ItemListaPrecio) session.get(ItemListaPrecio.class, idItemListaPrecio);
+			Hibernate.initialize(objeto.getComponenteMenu());
 		} finally {
 			session.close();
 		}

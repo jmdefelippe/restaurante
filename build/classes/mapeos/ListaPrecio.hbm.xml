@@ -14,9 +14,9 @@
 			<one-to-many class = "datos.ItemListaPrecio"/>
 		</set>
 		
-		<set name = "clientes" table = "cliente" order-by = "idClienteasc" inverse = "true" lazy = "true" fetch = "select">
+		<set name = "tiposCliente" table = "tipoCliente" order-by = "idTipoCliente asc" inverse = "true" lazy = "true" fetch = "select">
 			<key column = "idListaPrecio" not-null = "true"/>
-			<one-to-many class = "datos.Cliente"/>
+			<one-to-many class = "datos.TipoCliente"/>
 		</set>
 	
 	

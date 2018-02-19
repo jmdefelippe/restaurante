@@ -10,6 +10,7 @@
 		<property column="importe" name="importe" type="float"/>
 		
 		<many-to-one name = "componenteMenu" class = "datos.ComponenteMenu" column = "idComponenteMenu" not-null = "true"/>
+	
 		<many-to-one name = "ticket" class = "datos.Ticket" column = "idTicket" not-null = "true"/>
 
 	</class>

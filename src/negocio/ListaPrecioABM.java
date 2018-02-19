@@ -41,6 +41,15 @@ public class ListaPrecioABM {
 	}
 	
 
+
+	public ListaPrecio traerListaPrecio(int idListaPrecio){
+		return dao.traerListaPrecio(idListaPrecio);
+	}
+	
+	public ListaPrecio traerListaPrecioEItems(int idListaPrecio){
+		return dao.traerListaPrecioEItems(idListaPrecio);
+	}
+	
 	public List<ListaPrecio> traerListaPrecio(){
 		return dao.traerListaPrecio();
 	}

@@ -9,7 +9,8 @@
 		<property column="precio" name="precio" type="float"/>
 		
 		<many-to-one name = "componenteMenu" class = "datos.ComponenteMenu" column = "idComponenteMenu" not-null = "true"/>
-		<many-to-one name = "listaPrecios" class = "datos.ListaPrecio" column = "idListaPrecio" not-null = "true"/>
+		
+		<many-to-one name = "listaPrecio" class = "datos.ListaPrecio" column = "idListaPrecio" not-null = "true"/>
 
 	</class>
 </hibernate-mapping>

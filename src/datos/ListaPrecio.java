@@ -13,7 +13,7 @@ public class ListaPrecio {
 	private GregorianCalendar fechaHasta;
 	
 	private Set<ItemListaPrecio> itemsListaPrecio;
-	private Set<Cliente> clientes;
+	private Set<TipoCliente> tiposCliente;
 	
 	public ListaPrecio() {
 	}
@@ -39,12 +39,12 @@ public class ListaPrecio {
 		this.itemsListaPrecio = itemsListaPrecio;
 	}
 
-	public Set<Cliente> getClientes() {
-		return clientes;
+	public Set<TipoCliente> getTiposCliente() {
+		return tiposCliente;
 	}
 
-	public void setClientes(Set<Cliente> clientes) {
-		this.clientes = clientes;
+	public void setTiposCliente(Set<TipoCliente> tiposCliente) {
+		this.tiposCliente = tiposCliente;
 	}
 	
 	@Override
@@ -53,6 +53,24 @@ public class ListaPrecio {
 				", fechaDesde=" + Funciones.traerFechaCorta(fechaDesde) +
 				", fechaHasta=" + Funciones.traerFechaCorta(fechaHasta) +
 				"]";
+	}
+
+	public GregorianCalendar getFechaDesde() {
+		return fechaDesde;
+	}
+
+	public void setFechaDesde(GregorianCalendar fechaDesde) {
+		this.fechaDesde = fechaDesde;
+	}
+
+	public GregorianCalendar getFechaHasta() {
+		return fechaHasta;
+	}
+
+	public void setFechaHasta(GregorianCalendar fechaHasta) {
+		this.fechaHasta = fechaHasta;
 	}	
+	
+	
 	
 }
