@@ -73,13 +73,17 @@ public class LoginDao {
 		return objeto;
 	}
 	
-	public Login traerLogin(String nick) throws HibernateException {
+	public Login traerLogin(String nick, String clave) throws HibernateException {
 		Login objeto = null;
 		try {
 			iniciaOperacion();
 			
-			String hql="from Login l where l.nick=:nick";
-			objeto=(Login) session.createQuery(hql).setParameter("nick", (String)nick).uniqueResult();
+			String hql="from Login l where l.nick= '" + nick + "' and l.clave= '" + clave + "'" ;
+			objeto = (Login)session.createQuery(hql).uniqueResult();
+			Hibernate.initialize(objeto.getUsuario().getTipoUsuario());
+			
+//			objeto=(Login) session.createQuery(hql).setParameter("nick", (String)nick).uniqueResult();
+//			objeto=(Login) session.createQuery(hql).setParameter("clave", (String)clave).uniqueResult();
 	
 		}catch (HibernateException he) {
 			manejaExcepcion(he);
@@ -89,6 +93,7 @@ public class LoginDao {
 		}
 		return objeto;
 	}
+	
 	
 	@SuppressWarnings("unchecked")
 	public List<Login> traerLogin() throws HibernateException {
@@ -102,7 +107,7 @@ public class LoginDao {
 		return lista;
 	}
 
-	/*
+
 	public Login traerLoginYUsuario(int idLogin) throws HibernateException {
 		Login objeto = null ;
 		try {
@@ -114,7 +119,7 @@ public class LoginDao {
 		}
 		return objeto;
 		}
-	*/
+
 	
 	public boolean existeLogin(int id) throws HibernateException {
 
@@ -131,18 +136,20 @@ public class LoginDao {
 	}	
 	
 	
-	public boolean existeLogin(String nick) throws HibernateException {
+	public boolean existeLogin(String nick, String clave) throws HibernateException {
 
 		Login objeto = null;
 		
 		try {
 			iniciaOperacion();
-			objeto = (Login) session.createQuery("from Login l where l.nombre ='"+ nick+"'").uniqueResult();
+			objeto = (Login) session.createQuery("from Login l where l.nombre ='"+ nick+"' and l.clave ='"+ clave+"'").uniqueResult();
 		} finally {
 			session.close();
 		}
 	
 		return objeto!=null;
 	}
+	
+	
 	
 }

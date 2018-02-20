@@ -25,8 +25,8 @@ public class LoginABM {
 	 * Cuando comparas referencias usas == es decir null  
 	 */
 	
-	public Login traerLogin(String nick) throws Exception{
-		Login login = dao.traerLogin(nick);
+	public Login traerLogin(String nick, String clave) throws Exception{
+		Login login = dao.traerLogin(nick, clave);
 		
 		if (login==null)
     		throw new Exception("Error:El login no existe");
@@ -34,64 +34,64 @@ public class LoginABM {
 		return login;
 	}
 
-	/*
+
 	public Login traerLoginYUsuario(int idLogin) throws Exception{
 		Login login = dao.traerLoginYUsuario(idLogin);
 			
-    	if (login.equals(null))
+    	if (login==null)
     		throw new Exception("Error:El login no existe");
 		
 		return login;
 	}
-	*/
+	
 
 	
-    public int agregar(String nick, String clave, Usuario usuario) throws Exception{
-		if(dao.existeLogin(nick)){
-			throw new Exception("Error:El login ya existe");
-		}
-		
-		Login login = new Login(nick, clave, usuario);
-		
-		return dao.agregar(login);
-	}
-    
-    public int agregar(Login login) throws Exception{
-		if(dao.existeLogin(login.getNick())){
-			throw new Exception("Error:El login ya existe");
-		}
-	
-		return dao.agregar(login);
-	}
-	
-    
-	public void modificar(Login login) throws Exception{
-		if(!dao.existeLogin(login.getNick())){
-			throw new Exception("Error:El login no existe");
-		}
-		
-		dao.actualizar(login);
-	}
-	
-	public void eliminar(int id) throws Exception{
-		Login login = dao.traerLogin(id);
-		
-		if(dao.existeLogin(id)){
-			dao.eliminar(login);
-		}else{
-    		throw new Exception("Error:El login no existe");
-		}	
-	}
-	
-	public void eliminar(String nick) throws Exception{
-		Login login = dao.traerLogin(nick);
-		
-		if(dao.existeLogin(nick)){
-			dao.eliminar(login);
-		}else{
-    		throw new Exception("Error:El login no existe");
-		}	
-	}
+//    public int agregar(String nick, String clave, Usuario usuario) throws Exception{
+//		if(dao.existeLogin(nick)){
+//			throw new Exception("Error:El login ya existe");
+//		}
+//		
+//		Login login = new Login(nick, clave, usuario);
+//		
+//		return dao.agregar(login);
+//	}
+//    
+//    public int agregar(Login login) throws Exception{
+//		if(dao.existeLogin(login.getNick())){
+//			throw new Exception("Error:El login ya existe");
+//		}
+//	
+//		return dao.agregar(login);
+//	}
+//	
+//    
+//	public void modificar(Login login) throws Exception{
+//		if(!dao.existeLogin(login.getNick())){
+//			throw new Exception("Error:El login no existe");
+//		}
+//		
+//		dao.actualizar(login);
+//	}
+//	
+//	public void eliminar(int id) throws Exception{
+//		Login login = dao.traerLogin(id);
+//		
+//		if(dao.existeLogin(id)){
+//			dao.eliminar(login);
+//		}else{
+//    		throw new Exception("Error:El login no existe");
+//		}	
+//	}
+//	
+//	public void eliminar(String nick) throws Exception{
+//		Login login = dao.traerLogin(nick);
+//		
+//		if(dao.existeLogin(nick)){
+//			dao.eliminar(login);
+//		}else{
+//    		throw new Exception("Error:El login no existe");
+//		}	
+//	}
 	
 	public List<Login> traerLogin(){
 		return dao.traerLogin();

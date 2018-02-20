@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import datos.Login;
 import negocio.LoginABM;
 import negocio.TipoUsuarioABM;
 import negocio.UsuarioABM;
@@ -47,10 +49,11 @@ public class ControladorLogin extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		/*
-		 * cuando pulso el boton sign in ingreso a este metodo donde tengo que
+		 * cuando pulso el boton entrar ingreso a este metodo donde tengo que
 		 * buscar al usuario en la base de datos para autenticarlo
 		 */
-
+		HttpSession session = request.getSession();
+		
 		String nick = request.getParameter("nick");
 		String clave = request.getParameter("clave");
 
@@ -67,9 +70,30 @@ public class ControladorLogin extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		try {
-			loginABM.traerLogin(nick);
+			Login login = loginABM.traerLogin(nick, clave);
+			
+			int idTipoUsuario = login.getUsuario().getTipoUsuario().getIdTipoUsuario();
+			
+			session.setAttribute("nick", nick);
+			
+			switch (idTipoUsuario){
+				case 1: {
+					request.getRequestDispatcher("/jsp/bienvenidoAdmin.jsp").forward(request, response);
+				}; break;
+				case 2: {
+					request.getRequestDispatcher("/jsp/bienvenidoAdicionista.jsp").forward(request, response);
+				}; break;
+				case 3: {
+					request.getRequestDispatcher("/jsp/bienvenidoGerente.jsp").forward(request, response);
+				}; break;
+					
+			}
+			
+						
 
 		} catch (Exception e) {						
+			request.getRequestDispatcher("/jsp/errorLogin.jsp").forward(request, response);
+			//response.sendError(500, "Los datos ingresados no corresponden a un usuario válido." );
 			e.printStackTrace(out);
 		}
 		

@@ -676,6 +676,9 @@ UPDATE `bd-restaurant`.`itemticket` SET `importe`='0' WHERE `idItemTicket`='2';
 UPDATE `bd-restaurant`.`itemticket` SET `importe`='0' WHERE `idItemTicket`='3';
 UPDATE `bd-restaurant`.`itemticket` SET `importe`='0' WHERE `idItemTicket`='4';
 
+UPDATE `bd-restaurant`.`login` SET `nick`='admin' WHERE `idLogin`='1';
+UPDATE `bd-restaurant`.`login` SET `nick`='adic' WHERE `idLogin`='2';
+UPDATE `bd-restaurant`.`login` SET `nick`='ger' WHERE `idLogin`='3';
 
 
 
