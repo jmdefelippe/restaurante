@@ -680,6 +680,19 @@ UPDATE `bd-restaurant`.`login` SET `nick`='admin' WHERE `idLogin`='1';
 UPDATE `bd-restaurant`.`login` SET `nick`='adic' WHERE `idLogin`='2';
 UPDATE `bd-restaurant`.`login` SET `nick`='ger' WHERE `idLogin`='3';
 
+ALTER TABLE `bd-restaurant`.`mesa` 
+ADD COLUMN `state` VARCHAR(45) NULL AFTER `capacidad`;
+
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='1';
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='2';
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='3';
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='4';
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='5';
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='6';
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='7';
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='8';
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='9';
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='10';
 
 
 

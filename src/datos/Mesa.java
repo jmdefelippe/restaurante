@@ -13,6 +13,7 @@ public class Mesa {
 	private int capacidad;
 	
 	private EstadoMesa estadoMesa;
+	
 	private String state;
 	
 	private Set<Mesa> mesas;
@@ -55,6 +56,7 @@ public class Mesa {
 	public String toString() {
 		return  "Mesa [idMesa=" + idMesa +
 				", capacidad=" + capacidad +
+				", estado=" + state +
 				"]";
 	}
 	

@@ -55,10 +55,7 @@ public class TestTraer {
 			System.out.println(restaurantABM.traerRestaurant(1));
 			System.out.println();
 			
-		
-//			MesaABM mesaABM = new MesaABM();
-//			System.out.println(mesaABM.traerMesa(1));
-			
+					
 			ComponenteMenuABM componenteMenuABM = new ComponenteMenuABM();
 			System.out.println(componenteMenuABM.traerComponenteMenu(1));
 			System.out.println("Subrubro: " + componenteMenuABM.traerComponenteMenu(1).getSubrubro().getNombre());
@@ -119,8 +116,11 @@ public class TestTraer {
 			SalonABM salonABM = new SalonABM();
 			System.out.println("Salon 1: " + salonABM.traerSalon(1).getDescripcion() + " pertenece al restaurant llamado: " + salonABM.traerSalon(1).getRestaurant().getNombre());
 			System.out.println("Salon 2: " + salonABM.traerSalon(2).getDescripcion());
+			System.out.println();
 			
-			
+			MesaABM mesaABM = new MesaABM();
+			System.out.println(mesaABM.traerMesa(1));
+			mesaABM.traerMesa(1).getState();
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

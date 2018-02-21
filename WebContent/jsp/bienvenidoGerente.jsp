@@ -22,7 +22,7 @@
 				<li><a href="#">ABM Usuario</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-<%-- 				<li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("usuario")%></a></li> <!-- Aca estoy sacando la variable de sesion para mostrarla en pantalla --> --%>
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("nick")%></a></li> <!-- Aca estoy sacando la variable de sesion para mostrarla en pantalla -->
 				<li><a href="/Restaurante/Salir"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li> <!-- con href puedo llamar a un controlador como con un form action -->
 			</ul>
 			</div>

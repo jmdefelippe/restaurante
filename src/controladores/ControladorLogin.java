@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import datos.Login;
+import negocio.Facade;
 import negocio.LoginABM;
 import negocio.TipoUsuarioABM;
 import negocio.UsuarioABM;
@@ -62,15 +63,13 @@ public class ControladorLogin extends HttpServlet {
 		 * por el usuario en este caso el nick y su clave y los almaceno en una
 		 * variable local del metodo para buscarlo en la base
 		 */
-
-		TipoUsuarioABM tipoUsuarioABM = new TipoUsuarioABM();
-		LoginABM loginABM = new LoginABM();
-		UsuarioABM usuarioABM = new UsuarioABM();
+		
+		Facade facade = new Facade();
 
 		PrintWriter out = response.getWriter();
 
 		try {
-			Login login = loginABM.traerLogin(nick, clave);
+			Login login = facade.getLoginABM().traerLogin(nick, clave);
 			
 			int idTipoUsuario = login.getUsuario().getTipoUsuario().getIdTipoUsuario();
 			
