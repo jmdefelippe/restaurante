@@ -694,6 +694,9 @@ UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='8';
 UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='9';
 UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='10';
 
+UPDATE `bd-restaurant`.`mesa` SET `state`='ocupada' WHERE `idMesa`='2';
+UPDATE `bd-restaurant`.`mesa` SET `state`='reservada' WHERE `idMesa`='4';
+
 
 
 

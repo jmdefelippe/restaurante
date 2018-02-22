@@ -24,9 +24,14 @@
 			            if (this.readyState == 4 && this.status == 200) {
 			             //$('#layout').append(this.responseText);
 			            	document.getElementById("layout").innerHTML = this.responseText;
+			        		
+// 			            	$("#mesa1").on("click", function() {
+// 			        			alert("MESAAAA 1"); 
+// 			        		});
+			        		
 			            }
 			        };
-			        xmlhttp.open("GET","ajaxLayout.jsp?="+1,true);
+			        xmlhttp.open("GET","jsp/ajaxLayout.jsp?="+1,true);
 			        xmlhttp.send();
 			});
 		</script>
@@ -41,17 +46,17 @@
 			</div>
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Layout</a></li>
-				<li><a href="#">dejarDisponible</a></li>
-				<li><a href="#">ocupar</a></li>
-				<li><a href="#">terminar</a></li>
-				<li><a href="#">ABM Comanda</a></li>
-				<li><a href="#">emitirPreTicket</a></li>
-				<li><a href="#">emitirTicket</a></li>
-				<li><a href="#">sumarImporte</a></li>
-				<li><a href="#">ABM Usuario</a></li>
+<!-- 				<li><a href="#">dejarDisponible</a></li> -->
+<!-- 				<li><a href="#">ocupar</a></li> -->
+<!-- 				<li><a href="#">terminar</a></li> -->
+<!-- 				<li><a href="#">ABM Comanda</a></li> -->
+<!-- 				<li><a href="#">emitirPreTicket</a></li> -->
+<!-- 				<li><a href="#">emitirTicket</a></li> -->
+<!-- 				<li><a href="#">sumarImporte</a></li> -->
+<!-- 				<li><a href="#">ABM Usuario</a></li> -->
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("nick")%></a></li> <!-- Aca estoy sacando la variable de sesion para mostrarla en pantalla -->
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getParameter("nick")%></a></li> <!-- Aca estoy sacando la variable de sesion para mostrarla en pantalla -->
 				<li><a href="/Restaurante/Salir"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li> <!-- con href puedo llamar a un controlador como con un form action -->
 			</ul>
 			</div>

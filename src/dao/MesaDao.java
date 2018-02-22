@@ -67,6 +67,7 @@ public class MesaDao {
 		try {
 			iniciaOperacion();
 			objeto = (Mesa) session.get(Mesa.class, idMesa);
+			Hibernate.initialize(objeto.getSalon());
 		} finally {
 			session.close();
 		}

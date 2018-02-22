@@ -121,7 +121,7 @@ public class TestTraer {
 			MesaABM mesaABM = new MesaABM();
 			System.out.println(mesaABM.traerMesa(1));
 			mesaABM.traerMesa(1).getState();
-			
+			System.out.println("Pertenece al salon numero: " + mesaABM.traerMesa(1).getSalon().getIdSalon());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

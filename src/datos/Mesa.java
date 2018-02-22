@@ -17,6 +17,8 @@ public class Mesa {
 	private String state;
 	
 	private Set<Mesa> mesas;
+	
+	private Salon salon;
 
 	public Mesa() {
 	}
@@ -89,5 +91,15 @@ public class Mesa {
 		this.estadoMesa = estadoMesa;
 		return estadoMesa.toString();
 	}
+
+	public Salon getSalon() {
+		return salon;
+	}
+
+	public void setSalon(Salon salon) {
+		this.salon = salon;
+	}
+	
+	
 	
 }

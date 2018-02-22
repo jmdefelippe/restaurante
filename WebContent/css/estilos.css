@@ -1,7 +1,17 @@
 h1 {
+   padding: 0px 0px 0px 10px;
    color: white;
    font-family: bookman old style;
    font-size: 200%;
+   font-weight:2000 px;
+   text-shadow: black 0.1em 0.1em 0.2em
+}
+
+h2 {
+   padding: 0px 0px 0px 50px;
+   color: white;
+   font-family: times new roman;
+   font-size: 120%;
    font-weight:2000 px;
    text-shadow: black 0.1em 0.1em 0.2em
 }

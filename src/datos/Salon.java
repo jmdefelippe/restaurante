@@ -42,7 +42,8 @@ public class Salon {
 	public void setRestaurant(Restaurant restaurant) {
 		this.restaurant = restaurant;
 	}
-
+	
+	
 	public Set<Mesa> getMesas() {
 		return mesas;
 	}
