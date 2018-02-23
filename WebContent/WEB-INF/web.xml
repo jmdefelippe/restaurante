@@ -26,6 +26,11 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version = "3.
     <servlet-class>controladores.ControladorLogout</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>ControladorDetalleMesa</servlet-name>
+    <servlet-class>controladores.ControladorDetalleMesa</servlet-class>
+  </servlet>
+
  <servlet-mapping>	 
     <servlet-name>ControladorLogin</servlet-name>
     <url-pattern>/Inicio</url-pattern>
@@ -34,6 +39,11 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version = "3.
   <servlet-mapping>	 
     <servlet-name>ControladorLogout</servlet-name>
     <url-pattern>/Salir</url-pattern>
+  </servlet-mapping> 
+  
+    <servlet-mapping>	 
+    <servlet-name>ControladorDetalleMesa</servlet-name>
+    <url-pattern>/DetalleMesa</url-pattern>
   </servlet-mapping> 
 
 </web-app>

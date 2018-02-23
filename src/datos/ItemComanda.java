@@ -15,9 +15,10 @@ public class ItemComanda {
 		this.cantidad = cantidad;
 	}
 
-	public ItemComanda(int cantidad, ComponenteMenu componenteMenu) {
+	public ItemComanda(int cantidad, ComponenteMenu componenteMenu, Comanda comanda) {
 		this.cantidad = cantidad;
 		this.componenteMenu = componenteMenu;
+		this.comanda = comanda;
 	}
 
 	public int getIdItemComanda() {

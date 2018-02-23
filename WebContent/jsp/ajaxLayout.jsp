@@ -1,6 +1,5 @@
 <%@page import="java.util.*" %>
 <%@page import="datos.Mesa" %>
-<%@page import="datos.Rubro" %>
 <%@page import="negocio.Facade" %>
 <%@page import="java.io.PrintWriter" %>
 
@@ -26,6 +25,8 @@
 	int contadorOcupadasSalon2 = 0;
 	int contadorReservadasSalon2 = 0;
 	
+	//salida.println("<div style='width: 60px; height: 50px; margin: 10px; display: inline-block; background-color: #00FF00;'> </div>");
+
 	for(int i=1 ; i<=mesas.size() ; i++){
 		auxEstado = mesas.get(i-1).getState();
 		auxSalon = mesas.get(i-1).getSalon().getIdSalon();
@@ -52,7 +53,7 @@
 		}
 		
 		salida.println("<div id='mesa"+i+"' style='width: 60px; height: 50px; margin: 10px; display: inline-block; background-color: " + color + ";' > Mesa " + i + "  </div>");
-		
+		if (auxEstado.compareTo(ocupada) == 0) ;
 	}
 
 	salida.println("<br><br>");
@@ -66,6 +67,8 @@
 	salida.println("<h2> ** Mesas libres: " + contadorLibresSalon2 + "</h2>");
 	salida.println("<h2> ** Mesas ocupadas: " + contadorOcupadasSalon2 + "</h2>");
 	salida.println("<h2> ** Mesas reservadas: " + contadorReservadasSalon2 + "</h2>");
+	salida.println("<br>");
+	
 // 	salida.println("<h2> ----------------------------------- </h2>");
 // 	salida.println("<h2> ----------------------------------- </h2>");	
 	//salida.println("<option value='"+mesas.get(i-1).getIdMesa()+"'>"+mesas.get(i-1).getCapacidad()+"</option>");	

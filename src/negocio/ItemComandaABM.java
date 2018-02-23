@@ -1,8 +1,8 @@
 package negocio;
 
 import java.util.List;
-
 import dao.ItemComandaDao;
+import dao.ComandaDao;
 import datos.ComponenteMenu;
 import datos.Comanda;
 import datos.ItemComanda;
@@ -10,11 +10,22 @@ import datos.ItemComanda;
 public class ItemComandaABM {
 
 	ItemComandaDao dao = new ItemComandaDao();
-	
+	ComandaDao comandaDao = new ComandaDao();
 	
 	public ItemComanda traerItemComanda(int idItemComanda) throws Exception{
 		ItemComanda itemComanda = dao.traerItemComanda(idItemComanda);
-			
+    	if (itemComanda.equals(null))
+    		throw new Exception("Error:El itemComanda no existe");
+		
+		return itemComanda;
+	}
+	
+	public ItemComanda traerItemComandaPorComanda(int idComanda) throws Exception{
+		
+		Comanda comanda = comandaDao.traerComanda(idComanda);
+		ItemComanda itemComanda = dao.traerItemComanda(idComanda);
+
+		
     	if (itemComanda.equals(null))
     		throw new Exception("Error:El itemComanda no existe");
 		
@@ -22,8 +33,8 @@ public class ItemComandaABM {
 	}
 	
 	
-    public int agregar(int cantidad, ComponenteMenu componenteMenu){
-		ItemComanda itemComanda = new ItemComanda(cantidad, componenteMenu);
+    public int agregar(int cantidad, ComponenteMenu componenteMenu, Comanda comanda){
+		ItemComanda itemComanda = new ItemComanda(cantidad, componenteMenu, comanda);
 		
 		return dao.agregar(itemComanda);
 	}
