@@ -1,7 +1,14 @@
 package test;
 
+import java.util.GregorianCalendar;
+
+import datos.Comanda;
+import datos.ComponenteMenu;
 import datos.ItemListaPrecio;
 import datos.ListaPrecio;
+import datos.Restaurant;
+import datos.Ticket;
+import datos.Usuario;
 import negocio.CamareroABM;
 import negocio.ClienteABM;
 import negocio.ComandaABM;
@@ -122,6 +129,31 @@ public class TestTraer {
 			System.out.println(mesaABM.traerMesa(1));
 			mesaABM.traerMesa(1).getState();
 			System.out.println("Pertenece al salon numero: " + mesaABM.traerMesa(1).getSalon().getIdSalon());
+			System.out.println();
+			
+			
+			System.out.println(comandaABM.traerComandasPorIdMesa(mesaABM.traerMesa(1).getIdMesa()));
+			
+			System.out.println(itemComandaABM.traerItemsComandaPorComandaConComponente(comandaABM.traerComandasPorIdMesa(mesaABM.traerMesa(1).getIdMesa()).get(0).getIdComanda()));
+			
+			//for (ComponenteMenu cm: componenteMenuABM.traerComponenteMenu()) System.out.println(cm.getNombre());
+
+//			itemComandaABM.agregar(23, componenteMenuABM.traerComponenteMenu().get(1), comandaABM.traerComanda(3));
+//			
+			for (Comanda com: comandaABM.traerComandasPorIdMesaConCamareroYCliente(1)) System.out.println(com.getCliente().toString());
+			
+			GregorianCalendar fecha = new GregorianCalendar();
+			Comanda comandaPrueba = new Comanda(fecha, camareroABM.traerCamarero(1), clienteABM.traerCliente(1), mesaABM.traerMesa(3));
+			comandaABM.agregar(comandaPrueba);		
+			System.out.println(comandaPrueba);
+			System.out.println();
+			
+//			Ticket ticket = new Ticket(restaurantABM.traerRestaurant(1),usuarioABM.traerUsuario(2));
+//			System.out.println(ticketABM.agregar(ticket));
+			
+			//System.out.println(usuarioABM.traerUsuario(2));
+			System.out.println(ticketABM.emitirPreTicket(1, restaurantABM.traerRestaurant(1), usuarioABM.traerUsuario(2)));
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -51,6 +51,10 @@ public class ItemListaPrecioABM {
 	public List<ItemListaPrecio> traerItemListaPrecio(){
 		return dao.traerItemListaPrecio();
 	}
+
+	public List<ItemListaPrecio> traerItemListaPrecioConComponentePorIdLista(int idListaPrecio){
+		return dao.traerItemListaPrecioConComponentePorIdLista(idListaPrecio);
+	}
 	
 	public List<ItemListaPrecio> traerItemListaPrecio(ListaPrecio cliente) throws Exception{
 		List<ItemListaPrecio> lstItemListaPrecio = dao.traerItemListaPrecio(cliente);

@@ -5,6 +5,9 @@ import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import datos.Cliente;
+import datos.Comanda;
 import datos.ItemComanda;
 
 public class ItemComandaDao {
@@ -74,7 +77,21 @@ public class ItemComandaDao {
 		return objeto;
 	}
 	
+//------------------------------ Traigo Items Comanda de una Comanda especifica ------------
 	
+	public ItemComanda traerItemComanda(Comanda comanda) throws HibernateException {
+		ItemComanda objeto = null;
+		try {
+			iniciaOperacion();
+			objeto = (ItemComanda) session.createQuery("from ItemComanda ic where ic.idComanda=" + Integer.toString(comanda.getIdComanda())).uniqueResult();
+			Hibernate.initialize(objeto.getComponenteMenu());
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+	
+//--------------------------------------------------------------------------------
 	@SuppressWarnings("unchecked")
 	public List<ItemComanda> traerItemComanda() throws HibernateException {
 		List<ItemComanda> lista=null;
@@ -86,6 +103,31 @@ public class ItemComandaDao {
 		}
 		return lista;
 	}
+	
+	public List<ItemComanda> traerItemComandaPorComanda(int id) throws HibernateException {
+		List<ItemComanda> lista=null;
+		try {
+			iniciaOperacion();
+			lista=session.createQuery("from ItemComanda where idComanda="+Integer.toString(id)).list();
+		} finally {
+			session.close();
+		}
+		return lista;
+	}
+	
+	
+	public List<ItemComanda> traerItemsComandaPorComandaConComponente(int id) throws HibernateException {
+		List<ItemComanda> lista= null ;
+		try {
+		iniciaOperacion();
+		String hQL= "from ItemComanda as ic inner join fetch ic.componenteMenu where idComanda = " + Integer.toString(id);
+		lista = session .createQuery(hQL).list();
+		} finally {
+		session .close();
+		}
+		return lista;
+		}
+		
 
 	
 	public boolean existeItemComanda(int id) throws HibernateException {

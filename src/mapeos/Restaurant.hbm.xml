@@ -17,15 +17,15 @@
 <!-- 			<one-to-many class = "datos.Menu"/> -->
 <!-- 		</set> -->
 		
-<!-- 		<set name = "salones" table = "salon" order-by = "idSalon asc" inverse = "true" lazy = "true" fetch = "select"> -->
-<!-- 			<key column = "idRestaurant" not-null = "true"/> -->
-<!-- 			<one-to-many class = "datos.Salon"/> -->
-<!-- 		</set> -->
+		<set name = "salones" table = "salon" order-by = "idSalon asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idRestaurant" not-null = "true"/>
+			<one-to-many class = "datos.Salon"/>
+		</set>
 		
-<!-- 		<set name = "tickets" table = "ticket" order-by = "idTicket asc" inverse = "true" lazy = "true" fetch = "select"> -->
-<!-- 			<key column = "idRestaurant" not-null = "true"/> -->
-<!-- 			<one-to-many class = "datos.Ticket"/> -->
-<!-- 		</set> -->
+		<set name = "tickets" table = "ticket" order-by = "idTicket asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idRestaurant" not-null = "true"/>
+			<one-to-many class = "datos.Ticket"/>
+		</set>
 		
 	</class>
 </hibernate-mapping>

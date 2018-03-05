@@ -19,6 +19,8 @@ public class Mesa {
 	private Set<Mesa> mesas;
 	
 	private Salon salon;
+	
+	private Set<Comanda> comandas;
 
 	public Mesa() {
 	}
@@ -76,6 +78,7 @@ public class Mesa {
 			estadoMesa = new Libre();
 		if(getState().equals("Ocupada"))
 			estadoMesa = new Ocupada();
+			
 	//	if(getState().equals("Reservado"))
 	//		estadoMesa = new Terminada();
 				
@@ -98,6 +101,14 @@ public class Mesa {
 
 	public void setSalon(Salon salon) {
 		this.salon = salon;
+	}
+
+	public Set<Comanda> getComandas() {
+		return comandas;
+	}
+
+	public void setComandas(Set<Comanda> comandas) {
+		this.comandas = comandas;
 	}
 	
 	

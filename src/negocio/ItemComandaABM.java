@@ -19,11 +19,12 @@ public class ItemComandaABM {
 		
 		return itemComanda;
 	}
+	//------------------------------ Traigo Items Comanda de una Comanda especifica ------------
 	
 	public ItemComanda traerItemComandaPorComanda(int idComanda) throws Exception{
 		
 		Comanda comanda = comandaDao.traerComanda(idComanda);
-		ItemComanda itemComanda = dao.traerItemComanda(idComanda);
+		ItemComanda itemComanda = dao.traerItemComanda(comanda);
 
 		
     	if (itemComanda.equals(null))
@@ -32,6 +33,7 @@ public class ItemComandaABM {
 		return itemComanda;
 	}
 	
+	//-------------------------------------------------------------------------------------------
 	
     public int agregar(int cantidad, ComponenteMenu componenteMenu, Comanda comanda){
 		ItemComanda itemComanda = new ItemComanda(cantidad, componenteMenu, comanda);
@@ -61,6 +63,14 @@ public class ItemComandaABM {
 	
 	public List<ItemComanda> traerItemComanda(){
 		return dao.traerItemComanda();
+	}
+	
+	public List<ItemComanda> traerItemsComandaPorComanda( int id){
+		return dao.traerItemComandaPorComanda(id);
+	}
+	
+	public List<ItemComanda> traerItemsComandaPorComandaConComponente( int id){
+		return dao.traerItemsComandaPorComandaConComponente(id);
 	}
 	
 }

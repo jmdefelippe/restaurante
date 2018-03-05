@@ -72,8 +72,10 @@ public class ControladorLogin extends HttpServlet {
 			Login login = facade.getLoginABM().traerLogin(nick, clave);
 			
 			int idTipoUsuario = login.getUsuario().getTipoUsuario().getIdTipoUsuario();
+			int idUsuario = login.getUsuario().getIdUsuario();
 			
 			session.setAttribute("nick", nick);
+			session.setAttribute("idUsuario", idUsuario);
 			
 			switch (idTipoUsuario){
 				case 1: {

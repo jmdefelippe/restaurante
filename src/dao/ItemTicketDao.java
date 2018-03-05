@@ -77,11 +77,11 @@ public class ItemTicketDao {
 	
 	
 	@SuppressWarnings("unchecked")
-	public List<ItemTicket> traerItemTicket() throws HibernateException {
+	public List<ItemTicket> traerItemTicketPorTicketConComponenteMenu(int idTicket) throws HibernateException {
 		List<ItemTicket> lista=null;
 		try {
 			iniciaOperacion();
-			lista=session.createQuery("from ItemTicket i order by i.id").list();
+			lista=session.createQuery("from ItemTicket as it inner join fetch it.componenteMenu where idTicket ="+idTicket).list();
 		} finally {
 			session.close();
 		}

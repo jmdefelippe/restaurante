@@ -6,6 +6,11 @@
 		
 		<id column="idTicket" name="idTicket"><generator class="identity"/></id>
 		
+		<property column="fecha" name="fecha" type="calendar"/>
+		<property column="pagado" name="pagado" type="boolean"/>
+		<property column="cortesia" name="cortesia" type="boolean"/>
+		<property column="total" name="total" type="float"/>
+		
 		<many-to-one name = "restaurant" class = "datos.Restaurant" column = "idRestaurant" not-null = "true"/>
 		<many-to-one name = "usuario" class = "datos.Usuario" column = "idUsuario" not-null = "true"/>
 				

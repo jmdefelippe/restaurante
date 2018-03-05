@@ -87,7 +87,7 @@ public class Comanda {
 	@Override
 	public String toString() {
 		return  "Comanda [idComanda=" + idComanda +
-				", fechaHora=" + Funciones.traerFechaCortaConHora(fechaHora) +
+				//", fechaHora=" //+ Funciones.traerFechaCortaConHora(fechaHora) +
 				"]";
 	}	
 	

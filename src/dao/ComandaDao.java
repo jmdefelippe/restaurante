@@ -7,7 +7,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import datos.Comanda;
+import datos.ItemComanda;
 import datos.Menu;
+import datos.Mesa;
 import funciones.Funciones;
 
 public class ComandaDao {
@@ -85,6 +87,52 @@ public class ComandaDao {
 		}
 		return objeto;
 	}
+//------------------------------ Traigo Comanda de una Mesa especifica ------------	
+//	public Comanda traerComandaPorIdMesa(int id) throws HibernateException {
+//		Comanda objeto = null;
+//		try {
+//			iniciaOperacion();
+//			objeto = (Comanda) session.createQuery("from Comanda where idMesa=" + Integer.toString(id)).uniqueResult();
+//			Hibernate.initialize(objeto.getCamarero());
+//			Hibernate.initialize(objeto.getCliente());
+//			Hibernate.initialize(objeto.getCliente().getTipoCliente());
+//			Hibernate.initialize(objeto.getCliente().getTipoCliente().getListaPrecio());
+//			Hibernate.initialize(objeto.getMesa());
+//		} finally {
+//			session.close();
+//		}
+//		return objeto;
+//	}
+
+//--------------------------------------------------------------------------------
+	public List<Comanda> traerComandasPorIdMesa(int id) throws HibernateException {
+		List<Comanda> lista=null;
+	try {
+		iniciaOperacion();
+		lista = (List<Comanda>) session.createQuery("from Comanda where idMesa=" + Integer.toString(id) + " Order by fechaHora DESC").list();
+
+		//Hibernate.initialize(objeto.getMesa());
+	} finally {
+		session.close();
+	}
+	return lista;
+}
+	
+	public List<Comanda> traerComandasPorIdMesaConCamareroYCliente(int id) throws HibernateException {
+		List<Comanda> lista=null;
+	try {
+		iniciaOperacion();
+		lista = (List<Comanda>) session.createQuery("from Comanda as c inner join fetch c.cliente inner join fetch c.camarero where idMesa=" + Integer.toString(id) + " Order by fechaHora DESC").list();
+
+		//Hibernate.initialize(objeto.getMesa());
+	} finally {
+		session.close();
+	}
+	return lista;
+}
+	
+	
+	
 	
 	
 	@SuppressWarnings("unchecked")
@@ -98,6 +146,8 @@ public class ComandaDao {
 		}
 		return lista;
 	}
+	
+	
 	
 
 	@SuppressWarnings("unchecked")

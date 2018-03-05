@@ -87,6 +87,17 @@ public class ItemListaPrecioDao {
 		}
 		return lista;
 	}
+	
+	public List<ItemListaPrecio> traerItemListaPrecioConComponentePorIdLista(int idListaPrecio) throws HibernateException {
+		List<ItemListaPrecio> lista=null;
+		try {
+			iniciaOperacion();
+			lista=session.createQuery("from ItemListaPrecio as i inner join fetch i.componenteMenu where idListaPrecio = "+ Integer.toString(idListaPrecio)).list();
+		} finally {
+			session.close();
+		}
+		return lista;
+	}
 
 	
 	public boolean existeItemListaPrecio(int id) throws HibernateException {

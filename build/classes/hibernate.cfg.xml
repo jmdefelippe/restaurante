@@ -31,7 +31,6 @@
 			<mapping resource="mapeos/TipoCliente.hbm.xml"/>
 			<mapping resource="mapeos/TipoUsuario.hbm.xml"/>
 			<mapping resource="mapeos/Usuario.hbm.xml"/>
-
 	
 		
 	</session-factory>

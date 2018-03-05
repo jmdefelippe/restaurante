@@ -122,13 +122,7 @@ public class ComponenteMenu {
 
 	@Override
 	public String toString() {
-		return  "ComponenteMenu [idComponenteMenu=" + idComponenteMenu +
-				", descripcion=" + descripcion +
-				", nombre=" + nombre +
-				", imagen=" + imagen +
-				", disponibilidad=" + disponibilidad +
-				", estado=" + estado +
-				"]";
+		return  "Plato: " + nombre;
 	}	
 	
 /*	

@@ -10,6 +10,7 @@ public class Ticket {
 	private int idTicket;
 	private GregorianCalendar fecha;
 	private boolean pagado;
+	private boolean cortesia;
 	private float total;
 	
 	private Restaurant restaurant;
@@ -21,9 +22,10 @@ public class Ticket {
 	public Ticket() {
 	}
 
-	public Ticket(GregorianCalendar fecha, boolean pagado, float total, Restaurant restaurant, Usuario usuario) {
+	public Ticket(GregorianCalendar fecha, boolean pagado, boolean cortesia, float total, Restaurant restaurant, Usuario usuario) {
 		this.fecha = fecha;
 		this.pagado = pagado;
+		this.cortesia = cortesia;
 		this.total = total;
 		this.restaurant = restaurant;
 		this.usuario = usuario;
@@ -51,6 +53,16 @@ public class Ticket {
 
 	public void setPagado(boolean pagado) {
 		this.pagado = pagado;
+	}
+	
+	
+
+	public boolean isCortesia() {
+		return cortesia;
+	}
+
+	public void setCortesia(boolean cortesia) {
+		this.cortesia = cortesia;
 	}
 
 	public float getTotal() {
@@ -98,8 +110,17 @@ public class Ticket {
 		return  "Ticket [idTicket=" + idTicket +
 				", fecha=" + Funciones.traerFechaCorta(fecha) +
 				", pagado=" + pagado +
+				", cortesia=" + cortesia +
 				", total=" + total +
 				"]";
+	}
+
+	public Ticket(Restaurant restaurant, Usuario usuario) {
+		super();
+		this.restaurant = restaurant;
+		this.usuario = usuario;
 	}	
+	
+	
 	
 }

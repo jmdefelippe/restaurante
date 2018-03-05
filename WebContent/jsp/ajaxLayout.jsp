@@ -14,7 +14,7 @@
 	
 	String libre = "libre";
 	String ocupada = "ocupada";
-	String reservada = "reservada";
+	String reservada = "terminada";
 	String auxEstado = "";
 	int auxSalon = 0;
 	
@@ -44,7 +44,7 @@
 			else if (auxSalon == 2)
 				contadorOcupadasSalon2++;
 
-		} else if (auxEstado.compareTo(reservada)==0){
+		} else if (auxEstado.compareTo("terminada")==0){
 			color = "#FFAA00";
 			if (auxSalon == 1)
 				contadorReservadasSalon1++;
@@ -52,23 +52,39 @@
 				contadorReservadasSalon2++;
 		}
 		
-		salida.println("<div id='mesa"+i+"' style='width: 60px; height: 50px; margin: 10px; display: inline-block; background-color: " + color + ";' > Mesa " + i + "  </div>");
-		if (auxEstado.compareTo(ocupada) == 0) ;
+		salida.println("<div id='mesa"+i+"' class='mesa' style='display: inline-block; background-color: " + color + ";' > Mesa " + i + "  </div>");
 	}
 
-	salida.println("<br><br>");
-	salida.println("<h2> REPORTE DE ESTADOS </h2>");
-	salida.println("<h2> ---------- SALON 1 ---------- </h2>");
-	salida.println("<h2> ** Mesas libres: " + contadorLibresSalon1 + "</h2>");
-	salida.println("<h2> ** Mesas ocupadas: " + contadorOcupadasSalon1 + "</h2>");
-	salida.println("<h2> ** Mesas reservadas: " + contadorReservadasSalon1 + "</h2>");
 	
-	salida.println("<h2> ---------- SALON 2 ---------- </h2>");
-	salida.println("<h2> ** Mesas libres: " + contadorLibresSalon2 + "</h2>");
-	salida.println("<h2> ** Mesas ocupadas: " + contadorOcupadasSalon2 + "</h2>");
-	salida.println("<h2> ** Mesas reservadas: " + contadorReservadasSalon2 + "</h2>");
-	salida.println("<br>");
-	
+%>
+
+
+
+<div id="contenedorEtiquetasEstados">
+	<span style="color: #FFFFFF">ESTADOS POSIBLES:</span>
+	<br/><br/>
+	<span style="color: #00FF00">LIBRE</span>
+	<span style="color: #FF0000">OCUPADA</span>
+	<span style="color: #FFAA00">TERMINADA</span>
+</div>
+
+<div id="contenedorEstado">
+<div class="etiquetaMesa">REPORTE DE ESTADO</div>
+</div>
+
+<table id="estadoSalon">
+<tr><td class="cabeceraEstadoSalon">SAL&Oacute;N 1</td><td class="acomodarCabeceraEstadoSalon"></td></tr>
+<tr><td>Mesas libres</td><td class="numeroEstadoSalon"><%=contadorLibresSalon1 %></td></tr>
+<tr><td>Mesas ocupadas</td><td class="numeroEstadoSalon"><%=contadorOcupadasSalon1 %></td></tr>
+<tr><td>Mesas terminadas</td><td class="numeroEstadoSalon"><%=contadorReservadasSalon1 %></td></tr>
+<tr><td class="cabeceraEstadoSalon">SAL&Oacute;N 2</td><td class="acomodarCabeceraEstadoSalon"></td></tr>
+<tr><td>Mesas libres</td><td class="numeroEstadoSalon"><%=contadorLibresSalon2 %></td></tr>
+<tr><td>Mesas ocupadas</td><td class="numeroEstadoSalon"><%=contadorOcupadasSalon2 %></td></tr>
+<tr><td>Mesas terminadas</td><td class="numeroEstadoSalon"><%=contadorReservadasSalon2 %></td></tr>
+</table>
+
+
+<%
 // 	salida.println("<h2> ----------------------------------- </h2>");
 // 	salida.println("<h2> ----------------------------------- </h2>");	
 	//salida.println("<option value='"+mesas.get(i-1).getIdMesa()+"'>"+mesas.get(i-1).getCapacidad()+"</option>");	

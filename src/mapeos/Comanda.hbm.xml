@@ -11,14 +11,14 @@
 		<many-to-one name = "camarero" class = "datos.Camarero" column = "idCamarero" not-null = "true"/>
 		<many-to-one name = "cliente" class = "datos.Cliente" column = "idCliente" not-null = "true"/>
 		
-<!-- 		<many-to-one name = "mesa" class = "datos.Mesa" column = "idMesa" not-null = "true"/> -->
+		<many-to-one name = "mesa" class = "datos.Mesa" column = "idMesa" not-null = "true"/>
 
 		<many-to-one name = "ticket" class = "datos.Ticket" column = "idTicket" not-null = "true"/>
 		
-<!-- 		<set name = "itemsComanda" table = "itemComanda" order-by = "idItemComanda asc" inverse = "true" lazy = "true" fetch = "select"> -->
-<!-- 			<key column = "idComanda" not-null = "true"/> -->
-<!-- 			<one-to-many class = "datos.ItemComanda"/> -->
-<!-- 		</set> -->
+		<set name = "itemsComanda" table = "itemComanda" order-by = "idItemComanda asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idComanda" not-null = "true"/>
+			<one-to-many class = "datos.ItemComanda"/>
+		</set>
 	
 	</class>
 </hibernate-mapping>

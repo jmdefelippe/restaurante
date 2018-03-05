@@ -697,6 +697,48 @@ UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='10';
 UPDATE `bd-restaurant`.`mesa` SET `state`='ocupada' WHERE `idMesa`='2';
 UPDATE `bd-restaurant`.`mesa` SET `state`='reservada' WHERE `idMesa`='4';
 
+UPDATE `bd-restaurant`.`mesa` SET `state`='ocupada' WHERE `idMesa`='1';
 
 
+
+ALTER TABLE `bd-restaurant`.`comanda` 
+CHANGE COLUMN `fechaHora` `fechaHora` DATETIME NULL DEFAULT NULL ;
+
+UPDATE `bd-restaurant`.`comanda` SET `fechaHora`='2018-02-24 15:00:00' WHERE `idComanda`='1';
+UPDATE `bd-restaurant`.`comanda` SET `fechaHora`='2018-02-24 16:00:00' WHERE `idComanda`='2';
+UPDATE `bd-restaurant`.`comanda` SET `fechaHora`='2018-02-24 17:00:00' WHERE `idComanda`='3';
+
+
+
+
+INSERT INTO `bd-restaurant`.`comanda` (`idComanda`, `fechaHora`, `idCamarero`, `idCliente`, `idMesa`, `idTicket`) VALUES ('4', '2018-02-24 18:00:00', '1', '1', '2', '1');
+
+
+UPDATE `bd-restaurant`.`mesa` SET `state`='ocupada' WHERE `idMesa`='3';
+
+
+UPDATE `bd-restaurant`.`itemcomanda` SET `idComanda`='3' WHERE `idItemComanda`='1';
+UPDATE `bd-restaurant`.`itemcomanda` SET `idComanda`='3' WHERE `idItemComanda`='2';
+UPDATE `bd-restaurant`.`itemcomanda` SET `idComanda`='3' WHERE `idItemComanda`='3';
+
+
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='3';
+UPDATE `bd-restaurant`.`mesa` SET `state`='libre' WHERE `idMesa`='4';
+
+
+UPDATE `bd-restaurant`.`ticket` SET `idUsuario`='2' WHERE `idTicket`='1';
+
+
+UPDATE `bd-restaurant`.`ticket` SET `total`='0' WHERE `idTicket`='1';
+
+ALTER TABLE `bd-restaurant`.`comanda` 
+DROP FOREIGN KEY `fk_comanda_ticket1`;
+ALTER TABLE `bd-restaurant`.`comanda` 
+CHANGE COLUMN `idTicket` `idTicket` INT(11) NULL ;
+ALTER TABLE `bd-restaurant`.`comanda` 
+ADD CONSTRAINT `fk_comanda_ticket1`
+  FOREIGN KEY (`idTicket`)
+  REFERENCES `bd-restaurant`.`ticket` (`idTicket`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
 

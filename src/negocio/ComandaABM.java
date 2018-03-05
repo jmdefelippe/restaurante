@@ -24,6 +24,43 @@ public class ComandaABM {
 		return comanda;
 	}
 
+//------------------------------ Traigo Comanda de una Mesa especifica ------------		
+	
+//	public Comanda traerComandaPorIdMesa(int id) throws Exception{
+//		
+//		MesaABM mesaABM = new MesaABM();
+//		Comanda comanda = dao.traerComandaPorIdMesa(id);
+//			
+//    	if (comanda.equals(null))
+//    		throw new Exception("Error:La comanda no existe");
+//		
+//		return comanda;
+//	}
+	
+	//--------------------------------------------------------------------------------
+	
+	public List<Comanda> traerComandasPorIdMesa(int id) throws Exception{
+	
+	MesaABM mesaABM = new MesaABM();
+	List<Comanda> comandas = dao.traerComandasPorIdMesa(id);
+		
+	if (comandas.equals(null))
+		throw new Exception("Error:La comanda no existe");
+	
+	return comandas;
+}	
+	public List<Comanda> traerComandasPorIdMesaConCamareroYCliente(int id) throws Exception{
+		
+	MesaABM mesaABM = new MesaABM();
+	List<Comanda> comandas = dao.traerComandasPorIdMesaConCamareroYCliente(id);
+		
+	if (comandas.equals(null))
+		throw new Exception("Error:La comanda no existe");
+	
+	return comandas;
+}	
+	
+	
 	
     public int agregar(GregorianCalendar fechaHora, Camarero camarero, Cliente cliente, Mesa mesa){
 		Comanda comanda = new Comanda(fechaHora, camarero, cliente, mesa);

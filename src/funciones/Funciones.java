@@ -36,7 +36,7 @@ public class Funciones {
 	
 	
 	public static int traerHoras (GregorianCalendar fecha){
-		return fecha.get(GregorianCalendar.HOUR);
+		return fecha.get(GregorianCalendar.HOUR_OF_DAY);
 	}
 	
 	public static int traerMinutos (GregorianCalendar fecha){
@@ -90,26 +90,32 @@ public class Funciones {
 	//fechaCorta
 	public static String traerFechaCorta (GregorianCalendar fecha){
 		
-		int numeroDia = traerNumeroDiaMes(fecha);
-		String stringNumeroDia = "";
-		if (numeroDia < 10){
-			stringNumeroDia = "0" + numeroDia;
-		} else {
-			stringNumeroDia = "" + numeroDia;
+		String fechaCorta = "";
+		
+		if (fecha != null) {
+			
+			int numeroDia = traerNumeroDiaMes(fecha);
+			String stringNumeroDia = "";
+			if (numeroDia < 10){
+				stringNumeroDia = "0" + numeroDia;
+			} else {
+				stringNumeroDia = "" + numeroDia;
+			}
+			
+			int numeroMes = traerNumeroMes(fecha); 
+			String stringNumeroMes = "";
+			if (numeroMes < 10){
+				stringNumeroMes = "0" + numeroMes;
+			} else {
+				stringNumeroMes = "" + numeroMes;
+			}
+			
+			int numeroAnio = traerNumeroAnio(fecha);
+					
+			fechaCorta = stringNumeroDia + "/" + stringNumeroMes + "/" + numeroAnio;
+			
 		}
-		
-		int numeroMes = traerNumeroMes(fecha); 
-		String stringNumeroMes = "";
-		if (numeroMes < 10){
-			stringNumeroMes = "0" + numeroMes;
-		} else {
-			stringNumeroMes = "" + numeroMes;
-		}
-		
-		int numeroAnio = traerNumeroAnio(fecha);
-				
-		String fechaCorta = stringNumeroDia + "/" + stringNumeroMes + "/" + numeroAnio;
-		
+			
 		return fechaCorta;
 	}
 	
@@ -158,9 +164,10 @@ public class Funciones {
 			stringSegundos = "" + segundos;
 		}
 		
-				
-		String fechaCorta = stringNumeroDia + "/" + stringNumeroMes + "/" + numeroAnio +
-				"-" + stringHoras + ":" + stringMinutos + ":" + stringSegundos;
+		String fechaCorta = numeroAnio + "-" + stringNumeroMes + "-" + stringNumeroDia + " "
+				+ stringHoras + ":" + stringMinutos + ":" + stringSegundos;
+ //		String fechaCorta = stringNumeroDia + "/" + stringNumeroMes + "/" + numeroAnio +
+//				"-" + stringHoras + ":" + stringMinutos + ":" + stringSegundos;
 		
 		return fechaCorta;
 	}

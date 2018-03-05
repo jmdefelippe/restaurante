@@ -48,8 +48,8 @@ public class ItemTicketABM {
 	}
 	
 	
-	public List<ItemTicket> traerItemTicket(){
-		return dao.traerItemTicket();
+	public List<ItemTicket> traerItemTicketPorTicketConComponenteMenu(int idTicket){
+		return dao.traerItemTicketPorTicketConComponenteMenu(idTicket);
 	}
 	
 }

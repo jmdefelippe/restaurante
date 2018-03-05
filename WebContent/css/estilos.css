@@ -15,3 +15,228 @@ h2 {
    font-weight:2000 px;
    text-shadow: black 0.1em 0.1em 0.2em
 }
+
+#layout {
+	text-align: center;
+}
+
+.mesa {
+	display: inline-block;
+	width: 90px; 
+	height: 50px; 
+	margin: 20px; 
+	font-size: 15px;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: bold; 
+}
+
+#contenedorEtiquetasEstados {
+	max-width: 35%;
+	left:  50px;
+	background-color: #555555;
+	border-radius: 10px;
+	padding: 15px;	
+}
+
+#contenedorEtiquetasEstados span {
+	font-size: 20px;
+	margin: 10px 30px;
+	font-weight: bold;	
+}
+
+#estadoSalon {
+	max-width: 30%;
+	margin: 0 auto;
+	background-color: #BBBBBB;
+	font-size: 20px;
+	font-weight: bold;
+	padding:  5px;
+}
+
+.cabeceraEstadoSalon {
+	padding: 3px;
+	width: 100%;
+	background-color: #888888;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.acomodarCabeceraEstadoSalon {
+	background-color: #888888;
+}
+
+#estadoSalon td {
+	padding: 7px;
+}
+
+.numeroEstadoSalon {
+	padding: 10px;
+	font-size: 25px;
+	font-weight: bold;
+	
+}
+
+#btnOcupar {
+	width: 0150px;
+	cursor: pointer;
+	margin: 20px auto;
+	border-radius: 15px;
+	background-color: #FF0000;
+	color: #FFFFFF;
+	font-size: 30px;
+	text-align: center;
+	height: 70px;
+	padding:	20px 0px;
+}
+
+.btnEliminarItemComanda {
+	width: 40px;
+	height: 40px;
+	color: #FFFFFF;
+	font-size: 25px;
+	margin: 0 auto;
+	padding: 5px;
+	background-color: #FF0000;
+	border-radius: 4px;
+	font-weight:	bold;
+	text-align: center;
+	cursor: pointer;
+}
+
+.contenidoTabla {
+	font-size: 25px;
+	background-color: #DDDDDD;
+	font-weight: bold;
+	padding: 10px;
+	text-align: center;
+	
+}
+
+.tablaComanda {
+	margin: 20px auto;
+	max-width: 50%;	
+}
+
+.cabeceraTabla {
+	background-color: #888888;
+	color: #000000;
+	font-size: 35px;
+	font-weight: bold;
+	padding: 10px;	
+	text-align: center;
+}
+
+#btnAgregarComponente, #btnLiberarMesa {
+	margin: 20px auto;
+	text-align: center;
+	width: 300px;
+	height: 75px;
+	padding: 10px auto;
+	background-color: #006600;
+	border-radius: 20px;
+	color: #FFFFFF;
+	font-size: 50px;
+	cursor: pointer;
+}
+
+#contenedorSelectMesas {
+	margin: 0 auto;
+	width: auto;	
+	text-align: center;
+}
+
+.etiquetaMesa {
+	margin: 20px auto;
+	display: block;
+	color: #FFFFFF;
+	font-size: 30px;
+}
+
+#contenedorComandas, #contenedorOcupar, #contenedorCortesia, #contenedorEstado {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#selectMesas, #selectComponente, #cantidadComponente, #selectCamareros, #selectClientes, #selectCortesia {
+	display: block;
+	margin: 20px;
+	font-size: 30px;
+	margin: 0 auto;
+}
+
+#btnTerminarMesa {
+	margin: 20px auto;
+	text-align: center;
+	width: 350px;
+	height: 80px;
+	padding: 10px auto;
+	background-color: #6666FF;
+	border-radius: 20px;
+	color: #FFFFFF;
+	font-size: 60px;
+	cursor: pointer;
+}
+
+#contenedorTicket {
+	margin: 20px auto;
+	background-color: #FFFFFF;
+	max-width: 50%;
+}
+
+#ticket {
+	margin: 20px auto;
+	border: 0px;
+	background-color: #FFFFFF;
+	padding: 15px;
+}
+
+#tituloPreTicket {
+	padding: 10px;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	color: #000000;
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+
+.cantidadPreTicket {
+	width:  10%;
+	font-size: 25px;
+	font-weight: bold;
+	padding: 10px;
+	height: 30px;
+	text-align: center;
+}
+
+.itemPreTicket {
+	width:  75%;
+	font-size: 25px;
+	font-weight: bold;
+	padding: 10px;
+	height: 30px;
+	text-align: left;
+}
+
+.precioPreTicket {
+	width:  10%;
+	font-size: 25px;
+	font-weight: bold;
+	padding: 10px;
+	height: 30px;
+	text-align: right;
+}
+
+
+.error {
+	text-align: center;
+	margin: 15px auto;
+	font-size: 30px;
+	color: #FF0000;
+	font-weight: bold;
+	
+}

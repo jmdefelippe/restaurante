@@ -55,9 +55,7 @@ public class ItemComanda {
 
 	@Override
 	public String toString() {
-		return  "ItemComanda [idItemComanda=" + idItemComanda +
-				", cantidad=" + cantidad +
-				"]";
+		return  componenteMenu	+", cantidad =" + cantidad ;
 	}	
 	
 }

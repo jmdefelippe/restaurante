@@ -11,6 +11,10 @@
 		
 		<many-to-one name = "salon" class = "datos.Salon" column = "idSalon" not-null = "true"/>
 		
+		<set name = "comandas" table = "comanda" order-by = "idComanda asc" inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idMesa" not-null = "true"/>
+			<one-to-many class = "datos.Comanda"/>
+		</set>
 
 <!-- 		<set name = "mesas" table = "mesa" order-by = "idMesa asc" inverse = "true" lazy = "true" fetch = "select"> -->
 <!-- 			<key column = "idMesa" not-null = "true"/> -->
